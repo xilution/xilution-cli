@@ -8,7 +8,7 @@ yargs
     .command("echo-env", "echos the environment", {
         environment: {
             alias: "env",
-            default: "prod",
+            default: "test",
         },
     }, (argv) => {
         const environment = argv.environment;
