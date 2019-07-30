@@ -21,7 +21,7 @@
     "test": "yarn test:unit",
     "test:unit": "jest",
     "verify": "yarn lint && yarn test",
-    "release": "yarn build && semantic-release --ci false"
+    "release": "yarn build && semantic-release --allow-same-version --ci false"
   },
   "dependencies": {
     "jest": "^24.8.0",
