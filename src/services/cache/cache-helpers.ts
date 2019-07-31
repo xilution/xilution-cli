@@ -12,7 +12,7 @@ const getCache = async (): Promise<ICache | undefined> => {
     if (doesPathToCacheExist) {
         const buffer: Buffer = await promisify(readFile)(pathToCache);
 
-        return JSON.parse(Buffer.from(buffer).toString());
+        return JSON.parse(Buffer.from(buffer).toString("ASCII"));
     }
 
     return undefined;

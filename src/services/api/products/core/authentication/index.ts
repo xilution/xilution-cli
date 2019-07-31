@@ -19,23 +19,23 @@ export default {
                 const clientId = args.client_id as string;
                 const username = args.username as string;
 
-                const getThingResponse = await oauthImpersonationToken(
+                const response = await oauthImpersonationToken(
                     env, access_token, clientId, username);
 
-                if (getThingResponse.status !== 200) {
-                    throw new Error(getThingResponse.data.message);
+                if (response.status !== 200) {
+                    throw new Error(response.data.message);
                 }
 
-                return getThingResponse.data;
+                return response.data;
             },
             options: {
                 client_id: {
                     demandOption: true,
-                    description: "a Xilution client's ID",
+                    description: "A Xilution client's ID",
                 },
                 username: {
                     demandOption: true,
-                    description: "a Xilution user's username",
+                    description: "A Xilution user's username",
                 },
             },
         },
@@ -50,14 +50,14 @@ export default {
                 const password = args.password as string;
                 const username = args.username as string;
 
-                const getThingResponse = await oauthTokenFromBroker(
+                const response = await oauthTokenFromBroker(
                     env, grantType, clientId, clientSecret, username, password);
 
-                if (getThingResponse.status !== 200) {
-                    throw new Error(getThingResponse.data.message);
+                if (response.status !== 200) {
+                    throw new Error(response.data.message);
                 }
 
-                return getThingResponse.data;
+                return response.data;
             },
             options: {
                 client_id: {

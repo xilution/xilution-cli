@@ -19,7 +19,7 @@ export const getContext = async (profile: string): Promise<IContext> => {
     }
     const buffer: Buffer = await promisify(readFile)(pathToConfig);
 
-    const configuration = JSON.parse(Buffer.from(buffer).toString()) as IConfiguration;
+    const configuration = JSON.parse(Buffer.from(buffer).toString("ASCII")) as IConfiguration;
     const workingConfiguration: IContext = configuration[profile];
 
     if (workingConfiguration) {

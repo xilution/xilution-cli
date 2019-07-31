@@ -1,5 +1,6 @@
 export interface IContext {
     env: string;
+    organizationId: string;
     clientId: string;
     clientSecret?: string;
     username?: string;
