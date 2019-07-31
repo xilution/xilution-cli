@@ -1,9 +1,9 @@
 import {exists, readFile} from "fs";
 import {promisify} from "util";
-import {IConfiguration, IContext} from "../@types";
-import {getPathToConfig, getPathToXilutionDirectory} from "./filesystem-helpers";
+import {IConfiguration, IContext} from "../../@types";
+import {getPathToConfig, getPathToXilutionDirectory} from "../filesystem-helpers";
 
-export const getConfiguration = async (profile: string): Promise<IContext> => {
+export const getContext = async (profile: string): Promise<IContext> => {
     const pathToXilutionDirectory = getPathToXilutionDirectory();
     const doesPathToXilutionDirectory = await promisify(exists)(pathToXilutionDirectory);
     if (!doesPathToXilutionDirectory) {
@@ -31,6 +31,6 @@ export const getConfiguration = async (profile: string): Promise<IContext> => {
     }
 
     throw new Error(
-        `Configuration for profile: ${profile} does not exist. Please create one in ${pathToConfig} to continue.`,
+        `Configuration for the profile ${profile} does not exist. Please create one in ${pathToConfig} to continue.`,
     );
 };

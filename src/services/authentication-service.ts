@@ -1,6 +1,6 @@
 import {AxiosResponse} from "axios";
 import {IAuthentication} from "../@types";
-import {fetchTokensWithClientCredentialsGrantType} from "../brokers/xilution-core-authentication-broker";
+import {oauthToken} from "../brokers/xilution-core-authentication-broker";
 
 export const getTokenWithClientCredentials = async (
     env: string,
@@ -8,7 +8,23 @@ export const getTokenWithClientCredentials = async (
     clientSecret: string,
 ): Promise<IAuthentication> => {
     const fetchTokensResponse: AxiosResponse =
-        await fetchTokensWithClientCredentialsGrantType(env, clientId, clientSecret);
+        await oauthToken(env, "client_credentials", clientId, clientSecret);
+
+    if (fetchTokensResponse.status !== 200) {
+        throw new Error(fetchTokensResponse.data.message);
+    }
+
+    return fetchTokensResponse.data as IAuthentication;
+};
+
+export const getTokenWithPassword = async (
+    env: string,
+    clientId: string,
+    username: string,
+    password: string,
+): Promise<IAuthentication> => {
+    const fetchTokensResponse: AxiosResponse =
+        await oauthToken(env, "password", clientId, username, password);
 
     if (fetchTokensResponse.status !== 200) {
         throw new Error(fetchTokensResponse.data.message);

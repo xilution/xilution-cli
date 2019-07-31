@@ -1,7 +1,9 @@
 export interface IContext {
     env: string;
     clientId: string;
-    clientSecret: string;
+    clientSecret?: string;
+    username?: string;
+    password?: string;
 }
 
 export interface IConfiguration {
@@ -24,12 +26,4 @@ export interface IAuthentication {
 
 export interface ICache {
     [profile: string]: IAuthentication;
-}
-
-export interface IThing {
-    "@type": string;
-    "id": string;
-    "owningUserId": string;
-    "createdAt": string;
-    "updatedAt": string;
 }

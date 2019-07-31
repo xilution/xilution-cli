@@ -2,9 +2,9 @@ import {isAfter} from "date-fns";
 import {exists, mkdir, readFile, writeFile} from "fs";
 import {promisify} from "util";
 import {IAuthentication, ICache, IContext} from "../../@types";
-import {getTokenWithClientCredentials} from "../authentication-service";
-import {getConfiguration} from "../config-service";
-import {getPathToCache, getPathToXilutionDirectory} from "../filesystem-helpers";
+import {getTokenWithClientCredentials, getTokenWithPassword} from "../authentication-service";
+import {getContext} from "../config/config-service";
+import {getPathToCache, getPathToConfig, getPathToXilutionDirectory} from "../filesystem-helpers";
 
 const getCache = async (): Promise<ICache | undefined> => {
     const pathToCache = getPathToCache();
@@ -38,14 +38,15 @@ const cacheAuthentication = async (profile: string, authentication: IAuthenticat
         await promisify(mkdir)(xilutionDirectory);
     }
     const cache = await getCache();
+    const pathToCache = getPathToCache();
 
     if (cache) {
-        await promisify(writeFile)(getPathToCache(), JSON.stringify({
+        await promisify(writeFile)(pathToCache, JSON.stringify({
             ...cache,
             [profile]: authentication,
         }, null, 2));
     } else {
-        await promisify(writeFile)(getPathToCache(), JSON.stringify({
+        await promisify(writeFile)(pathToCache, JSON.stringify({
             [profile]: authentication,
         }, null, 2));
     }
@@ -54,11 +55,22 @@ const cacheAuthentication = async (profile: string, authentication: IAuthenticat
 };
 
 export const getAuthenticationFromXilution = async (profile: string): Promise<IAuthentication> => {
-    const workingConfig: IContext = await getConfiguration(profile);
-    const {env, clientId, clientSecret} = workingConfig;
-    const authentication = await getTokenWithClientCredentials(env, clientId, clientSecret);
+    const context: IContext = await getContext(profile);
+    const {env, clientId, clientSecret, username, password} = context;
+    let authentication;
+    if (env && clientId && clientSecret) {
+        authentication = await getTokenWithClientCredentials(env, clientId, clientSecret);
+    } else if (env && clientId && username && password) {
+        authentication = await getTokenWithPassword(env, clientId, username, password);
+    }
 
-    await cacheAuthentication(profile, authentication);
+    if (authentication) {
+        await cacheAuthentication(profile, authentication);
 
-    return authentication;
+        return authentication;
+    }
+
+    const pathToConfig = getPathToConfig();
+    // tslint:disable-next-line:max-line-length
+    throw new Error(`Unable to authenticate. The configuration for the profile ${profile} found in ${pathToConfig} must contain one of (env, clientId, clientSecret) or (env, clientId, username, password).`);
 };

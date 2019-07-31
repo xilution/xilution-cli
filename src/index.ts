@@ -2,9 +2,13 @@
 
 import yargs from "yargs";
 import {IContext} from "./@types";
-import apiCommand from "./commands/api";
-import configCommand from "./commands/config";
-import {doApiCommand, doConfigCommand} from "./operations";
+import apiCommand from "./services/api/command";
+import {doCallApi} from "./services/api/operations";
+import configCommand from "./services/config/command";
+import {doGetContext} from "./services/config/operations";
+
+const CONFIG_COMMAND = "config";
+const API_COMMAND = "api";
 
 const argv = yargs
     .usage("Usage: $0 <cmd> [options]")
@@ -24,22 +28,24 @@ const argv = yargs
 
 const [command] = argv._;
 
-if (command === "config") {
-    doConfigCommand(argv).then((workingConfig: IContext) => {
+if (command === CONFIG_COMMAND) {
+    doGetContext(argv).then((workingConfig: IContext) => {
         // tslint:disable-next-line:no-console
         console.log(JSON.stringify(workingConfig, null, 2));
     }).catch((error) => {
         // tslint:disable-next-line:no-console
-        console.error(error);
+        console.error(`Error: ${error.message}`);
         process.exit(1);
     });
-} else if (command === "api") {
-    doApiCommand(argv).then((result: any) => {
-        // tslint:disable-next-line:no-console
-        console.log(JSON.stringify(result, null, 2));
-    }).catch((error) => {
-        // tslint:disable-next-line:no-console
-        console.error(error);
-        process.exit(1);
-    });
+} else {
+    if (command === API_COMMAND) {
+        doCallApi(argv).then((result: any) => {
+            // tslint:disable-next-line:no-console
+            console.log(JSON.stringify(result, null, 2));
+        }).catch((error) => {
+            // tslint:disable-next-line:no-console
+            console.error(`Error: ${error.message}`);
+            process.exit(1);
+        });
+    }
 }
