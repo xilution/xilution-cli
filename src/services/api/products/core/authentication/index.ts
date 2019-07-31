@@ -1,10 +1,44 @@
 import {Arguments} from "yargs";
 import {IContext} from "../../../../../@types";
-import {oauthToken as oauthTokenFromBroker} from "../../../../../brokers/xilution-core-authentication-broker";
+import {
+    oauthImpersonationToken,
+    oauthToken as oauthTokenFromBroker,
+} from "../../../../../brokers/xilution-core-authentication-broker";
+import {getAuthentication} from "../../../../cache/cache-service";
 import {getContext} from "../../../../config/config-service";
 
 export default {
     operations: {
+        oauth_impersonation_token: {
+            operation: async (args: Arguments) => {
+                const profile = args.profile as string;
+                const context: IContext = await getContext(profile);
+                const {env} = context;
+                const authResponse = await getAuthentication(profile);
+                const {access_token} = authResponse;
+                const clientId = args.client_id as string;
+                const username = args.username as string;
+
+                const getThingResponse = await oauthImpersonationToken(
+                    env, access_token, clientId, username);
+
+                if (getThingResponse.status !== 200) {
+                    throw new Error(getThingResponse.data.message);
+                }
+
+                return getThingResponse.data;
+            },
+            options: {
+                client_id: {
+                    demandOption: true,
+                    description: "a Xilution client's ID",
+                },
+                username: {
+                    demandOption: true,
+                    description: "a Xilution user's username",
+                },
+            },
+        },
         oauth_token: {
             operation: async (args: Arguments) => {
                 const profile = args.profile as string;
