@@ -2,12 +2,12 @@
 
 # Set Up
 
-Before you use the Xilution CLI, you need to create `~/.xilution/config.json` add a little bit of information it.
+Before you use the Xilution CLI, you need to create a `~/.xilution/config.json` file and add a little bit of information it.
 
 ## Config
 
-Here's a sample `config.json` used by the Xilution CLI.
-Use this as a guide when you edit `~/.xilution/config.json`.
+Here's a sample `config.json` file used by the Xilution CLI.
+Use it as a guide when you edit `~/.xilution/config.json`.
 
 ```json
 {
@@ -27,9 +27,9 @@ Use this as a guide when you edit `~/.xilution/config.json`.
 
 ```
 
-Let's break it down.
+Let's break down the components of this JSON formatted file.
 
-`test` and `prod` are context profiles.
+The top level properties `test` and `prod` are the names given to two context profiles.
 You can pass a `--profile (string)` option when invoking Xilution CLI commands to change your context profile.
 
 `env` is required and references the Xilution environment. 
