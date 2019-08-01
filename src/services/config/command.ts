@@ -1,6 +1,6 @@
 import {CommandModule} from "yargs";
 
 export default {
-    command: "command.ts",
+    command: "config [options]",
     describe: "Config command",
 } as CommandModule;
