@@ -7,7 +7,7 @@ import {doCallApi} from "./services/api/operations";
 import configCommand from "./services/config/command";
 import {doGetContext} from "./services/config/operations";
 
-const CONFIG_COMMAND = "index.md";
+const CONFIG_COMMAND = "config";
 const API_COMMAND = "api";
 
 const argv = yargs
