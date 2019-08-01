@@ -15,7 +15,7 @@ const argv = yargs
     .option("profile", {
         alias: "p",
         default: "default",
-        describe: "The profile to use",
+        describe: "The context profile to use",
         global: true,
     })
     .command(configCommand)
