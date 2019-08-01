@@ -1,10 +1,8 @@
 [<- readme](../README.md)
 
-# Set Up
+# Config
 
 Before you use the Xilution CLI, you need to create a `~/.xilution/config.json` file and add a little bit of information it.
-
-## Config
 
 Here's a sample `config.json` file used by the Xilution CLI.
 Use it as a guide when you edit your `~/.xilution/config.json` file.
@@ -47,14 +45,6 @@ Note: `clientId` and `clientSecret` are used when the Xilution CLI authenticates
 You can also include a `username` and `password` properties in your context profile.
 The Xilution CLI will first try to authenticate with `clientId` and `clientSecret`.
 If the `clientSecret` is not present, the Xilution CLI will try to use `clientId`, `username` and `password to authenticate.
-
-## Cache
-
-The Xilution CLI caches authentication data in `~/.xilution/cache.json`.
-This includes OAuth tokens.
-Like `config.json`, `cache.json` is organized by context profile.
-You can delete `cache.json` anytime you want.
-Xilution CLI will automatically recreate it when necessary.
 
 ---
 Copyright 2019 Teapot, LLC.  

@@ -5,8 +5,9 @@ Provides command line abstractions for Xilution APIs.
 # Table of Contents
 
 * [Installation](./docs/installation.md)
-* [Set Up](docs/set-up.md)
+* [Config](docs/config.md)
 * [Usage](./docs/usage.md)
+* [Cache](docs/cache.md)
 * [Development](./docs/development.md)
 
 ---
