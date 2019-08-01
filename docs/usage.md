@@ -20,7 +20,9 @@ Show help.
 
 `--profile (string)`
 
-Use a specific profile from your ~/.xilution/config.json file.
+Use a specific profile from your `~/.xilution/config.json` file.
+When you don't include a profile, the Xilution CLI will look for a context profile named "default" in `~/.xilution/config.json`.
+If a "default" context profile is not found, the Xilution CLI will use the _first_ context profile at the active context profile when executing commands.
 
 ## Available Commands
 
