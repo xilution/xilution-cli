@@ -1,22 +1,14 @@
-# xilution-cli
+# Xilution CLI
 
-The Xilution command line interface.
 Provides command line abstractions for Xilution APIs.
 
-## First Things First
+# Table of Contents
 
-* Run `yarn` to load dependencies
+* [Installation](./docs/installation.md)
+* [Set Up](docs/set-up.md)
+* [Usage](./docs/usage.md)
+* [Development](./docs/development.md)
 
-## To Verify
-
-* Run `yarn verify`
-
-## To Build
-
-* Run `yarn build`
-
-## To See Usage
-
-* Run `yarn link` to make command executable
-* Run `xln-cli --help` to see CLI usage
-
+---
+Copyright 2019 Teapot, LLC.  
+Xilution is a DBA of Teapot, LLC.
