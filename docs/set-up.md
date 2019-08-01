@@ -7,7 +7,7 @@ Before you use the Xilution CLI, you need to create a `~/.xilution/config.json` 
 ## Config
 
 Here's a sample `config.json` file used by the Xilution CLI.
-Use it as a guide when you edit `~/.xilution/config.json`.
+Use it as a guide when you edit your `~/.xilution/config.json` file.
 
 ```json
 {
@@ -34,7 +34,6 @@ You can pass a `--profile (string)` option when invoking Xilution CLI commands t
 
 `env` is required and references the Xilution environment. 
 We offer two environments `test` and `prod`. 
-
 `test` refers to our Test or Sandbox environment.
 `prod` refers to our Production environment.
 
@@ -44,7 +43,7 @@ We offer two environments `test` and `prod`.
 
 `clientSecret` is a Xilution client secret.
 
-`clientId` and `clientSecret` are used when the Xilution CLI authenticates with the Xilution platform.
+Note: `clientId` and `clientSecret` are used when the Xilution CLI authenticates with the Xilution platform.
 You can also include a `username` and `password` properties in your context profile.
 The Xilution CLI will first try to authenticate with `clientId` and `clientSecret`.
 If the `clientSecret` is not present, the Xilution CLI will try to use `clientId`, `username` and `password to authenticate.
