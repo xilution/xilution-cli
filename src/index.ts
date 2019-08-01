@@ -7,11 +7,11 @@ import {doCallApi} from "./services/api/operations";
 import configCommand from "./services/config/command";
 import {doGetContext} from "./services/config/operations";
 
-const CONFIG_COMMAND = "config";
+const CONFIG_COMMAND = "index.md";
 const API_COMMAND = "api";
 
 const argv = yargs
-    .usage("Usage: $0 <cmd> [options]")
+    .usage("Usage: $0 <command> [options]")
     .option("profile", {
         alias: "p",
         default: "default",
