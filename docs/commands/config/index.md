@@ -16,7 +16,7 @@ xln-cli config [options]
 
 `--profile (string)`
 
-Use a specific profile from your ~/.xilution/config.json file.
+Use a specific context profile from your `~/.xilution/config.json` file.
 
 ---
 Copyright 2019 Teapot, LLC.  
