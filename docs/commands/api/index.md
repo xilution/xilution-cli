@@ -45,7 +45,25 @@ Hierarchy: `<product_category> / <product_name> / <operation>`.
   	* [reprovision_instance](integration/fox/reprovision_instance.md)
   	* [update_instance](integration/fox/update_instance.md)
   	* [update_instance_image](integration/fox/update_instance_image.md)
-
+* social
+  * chickadee
+  	* [create_tweet](social/chickadee/create_tweet.md)
+  	* [delete_tweet](social/chickadee/delete_tweet.md)
+  	* [get_tweet](social/chickadee/get_tweet.md)
+  	* [list_tweets](social/chickadee/list_tweets.md)
+  	* [update_tweet](social/chickadee/update_tweet.md)
+  	* [get_tweet_event](social/chickadee/get_tweet_event.md)
+  	* [list_tweet_events](social/chickadee/list_tweet_events.md)
+  	* [create_scheduled_tweet](social/chickadee/create_scheduled_tweet.md)
+  	* [delete_scheduled_tweet](social/chickadee/delete_scheduled_tweet.md)
+  	* [get_scheduled_tweet](social/chickadee/get_scheduled_tweet.md)
+  	* [list_scheduled_tweets](social/chickadee/list_scheduled_tweets.md)
+  	* [update_scheduled_tweet](social/chickadee/update_scheduled_tweet.md)
+  	* [create_twitter_account](social/chickadee/create_twitter_account.md)
+  	* [delete_twitter_account](social/chickadee/delete_twitter_account.md)
+  	* [get_twitter_account](social/chickadee/get_twitter_account.md)
+  	* [list_twitter_accounts](social/chickadee/list_twitter_accounts.md)
+  	* [update_twitter_account](social/chickadee/update_twitter_account.md)
 ---
 Copyright 2019 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
