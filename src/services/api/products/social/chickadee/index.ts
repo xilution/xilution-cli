@@ -3,6 +3,7 @@ import {promisify} from "util";
 import {Arguments} from "yargs";
 import {IContext} from "../../../../../@types";
 import {
+    auditScheduledTweets,
     createScheduledTweet,
     createTweet,
     createTwitterAccount,
@@ -27,6 +28,58 @@ import {getContext} from "../../../../config/config-service";
 
 export default {
     operations: {
+        audit_scheduled_tweets: {
+            operation: async (args: Arguments) => {
+                const profile = args.profile as string;
+                const context: IContext = await getContext(profile);
+                const {env} = context;
+                const authentication = await getAuthentication(profile);
+                const {access_token} = authentication;
+                let organizationId = args.organization_id as string;
+                if (organizationId === "MY_ORG_ID") {
+                    organizationId = context.organizationId;
+                }
+                const pageNumber = args.page_number as number;
+                const pageSize = args.page_size as number;
+                const fromTimestamp = args.from_timestamp as string;
+                const toTimestamp = args.to_timestamp as string;
+
+                const response = await auditScheduledTweets(
+                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
+
+                if (response.status !== 200) {
+                    throw new Error(response.data.message);
+                }
+
+                return response.data;
+            },
+            options: {
+                from_timestamp: {
+                    description: "The start timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
+                },
+                organization_id: {
+                    demandOption: true,
+                    description: "A Xilution organization's ID",
+                },
+                page_number: {
+                    description: "The page number",
+                    required: true,
+                    type: "number",
+                },
+                page_size: {
+                    description: "The page size",
+                    required: true,
+                    type: "number",
+                },
+                to_timestamp: {
+                    description: "The end timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
+                },
+            },
+        },
         create_scheduled_tweet: {
             operation: async (args: Arguments) => {
                 const profile = args.profile as string;
@@ -481,8 +534,11 @@ export default {
                 }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
+                const fromTimestamp = args.from_timestamp as string;
+                const toTimestamp = args.to_timestamp as string;
 
-                const response = await listScheduledTweets(env, access_token, organizationId, pageNumber, pageSize);
+                const response = await listScheduledTweets(
+                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -491,6 +547,11 @@ export default {
                 return response.data;
             },
             options: {
+                from_timestamp: {
+                    description: "The start timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
+                },
                 organization_id: {
                     demandOption: true,
                     description: "A Xilution organization's ID",
@@ -504,6 +565,11 @@ export default {
                     description: "The page size",
                     required: true,
                     type: "number",
+                },
+                to_timestamp: {
+                    description: "The end timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
                 },
             },
         },
@@ -520,8 +586,11 @@ export default {
                 }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
+                const fromTimestamp = args.from_timestamp as string;
+                const toTimestamp = args.to_timestamp as string;
 
-                const response = await listTweetEvents(env, access_token, organizationId, pageNumber, pageSize);
+                const response = await listTweetEvents(
+                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -530,6 +599,11 @@ export default {
                 return response.data;
             },
             options: {
+                from_timestamp: {
+                    description: "The start timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
+                },
                 organization_id: {
                     demandOption: true,
                     description: "A Xilution organization's ID",
@@ -543,6 +617,11 @@ export default {
                     description: "The page size",
                     required: true,
                     type: "number",
+                },
+                to_timestamp: {
+                    description: "The end timestamp in ISO 8601 format",
+                    required: true,
+                    type: "string",
                 },
             },
         },

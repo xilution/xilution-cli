@@ -26,6 +26,14 @@ The page number. Required.
 
 The page size. Required.
 
+`--from_timestamp (string)`
+
+The start timestamp in ISO 8601 format. Required.
+
+`--to_timestamp (string)`
+
+The end timestamp in ISO 8601 format. Required.
+
 ---
 Copyright 2019 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

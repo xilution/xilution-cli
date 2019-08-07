@@ -1,15 +1,15 @@
 [<- api](../../../api/index.md)
 
-# list_tweet_events
+# audit_scheduled_tweets
 
 ## Description
 
-Lists Chickadee tweet events.
+Audits Chickadee scheduled tweets.
 
 ## Synopsis
 
 ```
-xln-cli api social chickadee list_tweet_events [options]
+xln-cli api social chickadee audit_scheduled_tweets [options]
 ```
 
 ## Options

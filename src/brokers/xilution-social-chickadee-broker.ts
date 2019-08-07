@@ -13,8 +13,8 @@ export const buildPutTweetUrl = (env: string, organizationId: string, tweetId: s
 export const buildGetTweetUrl = (env: string, organizationId: string, tweetId: string) =>
     `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets/${tweetId}`;
 
-export const buildListTweetEventsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweet-events?page-number=${pageNumber}&page-size=${pageSize}`;
+export const buildListTweetEventsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweet-events?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
 
 export const buildGetTweetEventUrl = (env: string, organizationId: string, tweetEventId: string) =>
     `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweet-events/${tweetEventId}`;
@@ -22,8 +22,11 @@ export const buildGetTweetEventUrl = (env: string, organizationId: string, tweet
 export const buildDeleteTweetUrl = (env: string, organizationId: string, tweetId: string) =>
     `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets/${tweetId}`;
 
-export const buildListScheduledTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets?page-number=${pageNumber}&page-size=${pageSize}`;
+export const buildAuditScheduledTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets/audit?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
+
+export const buildListScheduledTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
 
 export const buildPostScheduledTweetUrl = (env: string, organizationId: string) =>
     `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets`;
@@ -120,7 +123,9 @@ export const listTweetEvents = async (
     organizationId: string,
     pageNumber: number,
     pageSize: number,
-): Promise<AxiosResponse> => axios.get(buildListTweetEventsUrl(env, organizationId, pageNumber, pageSize), {
+    fromTimestamp: string,
+    toTimestamp: string,
+): Promise<AxiosResponse> => axios.get(buildListTweetEventsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -139,13 +144,30 @@ export const getTweetEvent = async (
     validateStatus: () => true,
 });
 
+export const auditScheduledTweets = async (
+    env: string,
+    accessToken: string,
+    organizationId: string,
+    pageNumber: number,
+    pageSize: number,
+    fromTimestamp: string,
+    toTimestamp: string,
+): Promise<AxiosResponse> => axios.get(buildAuditScheduledTweetsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
+    headers: {
+        Authorization: `Bearer ${accessToken}`,
+    },
+    validateStatus: () => true,
+});
+
 export const listScheduledTweets = async (
     env: string,
     accessToken: string,
     organizationId: string,
     pageNumber: number,
     pageSize: number,
-): Promise<AxiosResponse> => axios.get(buildListScheduledTweetsUrl(env, organizationId, pageNumber, pageSize), {
+    fromTimestamp: string,
+    toTimestamp: string,
+): Promise<AxiosResponse> => axios.get(buildListScheduledTweetsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
