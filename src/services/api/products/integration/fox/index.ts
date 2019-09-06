@@ -27,15 +27,11 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const instance = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
-                const createResponse = await createInstance(env, access_token, organizationId, instance);
+                const createResponse = await createInstance(env, access_token, instance);
 
                 if (createResponse.status !== 201) {
                     throw new Error(createResponse.data.message);
@@ -80,13 +76,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await deleteInstance(env, access_token, organizationId, instanceId);
+                const response = await deleteInstance(env, access_token, instanceId);
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -114,13 +106,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await deprovisionInstance(env, access_token, organizationId, instanceId);
+                const response = await deprovisionInstance(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -146,13 +134,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await getInstance(env, access_token, organizationId, instanceId);
+                const response = await getInstance(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -191,13 +175,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await getInstanceStatus(env, access_token, organizationId, instanceId);
+                const response = await getInstanceStatus(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -223,14 +203,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
 
-                const response = await listInstances(env, access_token, organizationId, pageNumber, pageSize);
+                const response = await listInstances(env, access_token, pageNumber, pageSize);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -262,13 +238,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await provisionInstance(env, access_token, organizationId, instanceId);
+                const response = await provisionInstance(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -294,13 +266,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await reprovisionInstance(env, access_token, organizationId, instanceId);
+                const response = await reprovisionInstance(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -326,23 +294,19 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const instance = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
                 const updateResponse = await updateInstance(
-                    env, access_token, organizationId, instanceId, instance);
+                    env, access_token, instanceId, instance);
 
                 if (updateResponse.status !== 204) {
                     throw new Error(updateResponse.data.message);
                 }
 
-                const getResponse = await getInstance(env, access_token, organizationId, instanceId);
+                const getResponse = await getInstance(env, access_token, instanceId);
 
                 if (getResponse.status !== 200) {
                     throw new Error(getResponse.data.message);
@@ -385,13 +349,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const instanceId = args.instance_id as string;
 
-                const response = await updateInstanceImage(env, access_token, organizationId, instanceId);
+                const response = await updateInstanceImage(env, access_token, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);

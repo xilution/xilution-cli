@@ -14,10 +14,6 @@ xln-cli api social chickadee audit_scheduled_tweets [options]
 
 ## Options
 
-`--organization_id (string)`
-
-A Xilution organization's ID. Use "MY_ORG_ID" to reference the context profile `organizationId`. Required.
-
 `--page_number (number)`
 
 The page number. Required.

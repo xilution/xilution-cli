@@ -18,10 +18,6 @@ xln-cli api social chickadee get_tweet_event [options]
 
 A Chickadee tweet event ID. Required.
 
-`--organization_id (string)`
-
-A Xilution organization's ID. Use "MY_ORG_ID" to reference the context profile `organizationId`. Required.
-
 `--output_file (string)`
 
 Path to output file. Written in JSON format.

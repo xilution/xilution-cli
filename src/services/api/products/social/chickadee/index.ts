@@ -35,17 +35,13 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
                 const fromTimestamp = args.from_timestamp as string;
                 const toTimestamp = args.to_timestamp as string;
 
                 const response = await auditScheduledTweets(
-                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
+                    env, access_token, pageNumber, pageSize, fromTimestamp, toTimestamp);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -87,15 +83,11 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const scheduledTweet = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
-                const createResponse = await createScheduledTweet(env, access_token, organizationId, scheduledTweet);
+                const createResponse = await createScheduledTweet(env, access_token, scheduledTweet);
 
                 if (createResponse.status !== 201) {
                     throw new Error(createResponse.data.message);
@@ -140,15 +132,11 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const tweet = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
-                const createResponse = await createTweet(env, access_token, organizationId, tweet);
+                const createResponse = await createTweet(env, access_token, tweet);
 
                 if (createResponse.status !== 201) {
                     throw new Error(createResponse.data.message);
@@ -193,15 +181,11 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const twitterAccount = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
-                const createResponse = await createTwitterAccount(env, access_token, organizationId, twitterAccount);
+                const createResponse = await createTwitterAccount(env, access_token, twitterAccount);
 
                 if (createResponse.status !== 201) {
                     throw new Error(createResponse.data.message);
@@ -246,13 +230,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const scheduledTweetId = args.scheduled_tweet_id as string;
 
-                const response = await deleteScheduledTweet(env, access_token, organizationId, scheduledTweetId);
+                const response = await deleteScheduledTweet(env, access_token, scheduledTweetId);
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -280,13 +260,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const tweetId = args.tweet_id as string;
 
-                const response = await deleteTweet(env, access_token, organizationId, tweetId);
+                const response = await deleteTweet(env, access_token, tweetId);
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -314,13 +290,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const twitterAccountId = args.twitter_account_id as string;
 
-                const response = await deleteTwitterAccount(env, access_token, organizationId, twitterAccountId);
+                const response = await deleteTwitterAccount(env, access_token, twitterAccountId);
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -348,13 +320,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const scheduledTweetId = args.scheduled_tweet_id as string;
 
-                const response = await getScheduledTweet(env, access_token, organizationId, scheduledTweetId);
+                const response = await getScheduledTweet(env, access_token, scheduledTweetId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -393,13 +361,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const tweetId = args.tweet_id as string;
 
-                const response = await getTweet(env, access_token, organizationId, tweetId);
+                const response = await getTweet(env, access_token, tweetId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -438,13 +402,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const tweetEventId = args.tweet_event_id as string;
 
-                const response = await getTweetEvent(env, access_token, organizationId, tweetEventId);
+                const response = await getTweetEvent(env, access_token, tweetEventId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -483,13 +443,9 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const twitterAccountId = args.twitter_account_id as string;
 
-                const response = await getTwitterAccount(env, access_token, organizationId, twitterAccountId);
+                const response = await getTwitterAccount(env, access_token, twitterAccountId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -528,17 +484,13 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
                 const fromTimestamp = args.from_timestamp as string;
                 const toTimestamp = args.to_timestamp as string;
 
                 const response = await listScheduledTweets(
-                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
+                    env, access_token, pageNumber, pageSize, fromTimestamp, toTimestamp);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -580,17 +532,13 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
                 const fromTimestamp = args.from_timestamp as string;
                 const toTimestamp = args.to_timestamp as string;
 
                 const response = await listTweetEvents(
-                    env, access_token, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp);
+                    env, access_token, pageNumber, pageSize, fromTimestamp, toTimestamp);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -632,14 +580,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
 
-                const response = await listTweets(env, access_token, organizationId, pageNumber, pageSize);
+                const response = await listTweets(env, access_token, pageNumber, pageSize);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -671,14 +615,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
 
-                const response = await listTwitterAccounts(env, access_token, organizationId, pageNumber, pageSize);
+                const response = await listTwitterAccounts(env, access_token, pageNumber, pageSize);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -710,23 +650,19 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const scheduledTweetId = args.scheduled_tweet_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const scheduledTweet = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
                 const updateResponse = await updateScheduledTweet(
-                    env, access_token, organizationId, scheduledTweetId, scheduledTweet);
+                    env, access_token, scheduledTweetId, scheduledTweet);
 
                 if (updateResponse.status !== 204) {
                     throw new Error(updateResponse.data.message);
                 }
 
-                const getResponse = await getScheduledTweet(env, access_token, organizationId, scheduledTweetId);
+                const getResponse = await getScheduledTweet(env, access_token, scheduledTweetId);
 
                 if (getResponse.status !== 200) {
                     throw new Error(getResponse.data.message);
@@ -769,23 +705,19 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const tweetId = args.tweet_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const tweet = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
                 const updateResponse = await updateTweet(
-                    env, access_token, organizationId, tweetId, tweet);
+                    env, access_token, tweetId, tweet);
 
                 if (updateResponse.status !== 204) {
                     throw new Error(updateResponse.data.message);
                 }
 
-                const getResponse = await getTweet(env, access_token, organizationId, tweetId);
+                const getResponse = await getTweet(env, access_token, tweetId);
 
                 if (getResponse.status !== 200) {
                     throw new Error(getResponse.data.message);
@@ -828,23 +760,19 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
-                let organizationId = args.organization_id as string;
-                if (organizationId === "MY_ORG_ID") {
-                    organizationId = context.organizationId;
-                }
                 const twitterAccountId = args.twitter_account_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const twitterAccount = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
                 const updateResponse = await updateTwitterAccount(
-                    env, access_token, organizationId, twitterAccountId, twitterAccount);
+                    env, access_token, twitterAccountId, twitterAccount);
 
                 if (updateResponse.status !== 204) {
                     throw new Error(updateResponse.data.message);
                 }
 
-                const getResponse = await getTwitterAccount(env, access_token, organizationId, twitterAccountId);
+                const getResponse = await getTwitterAccount(env, access_token, twitterAccountId);
 
                 if (getResponse.status !== 200) {
                     throw new Error(getResponse.data.message);

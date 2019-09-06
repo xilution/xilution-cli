@@ -18,10 +18,6 @@ xln-cli api social chickadee create_twitter_account [options]
 
 Path to JSON formatted input file. Required.
 
-`--organization_id (string)`
-
-A Xilution organization's ID. Use "MY_ORG_ID" to reference the context profile `organizationId`. Required.
-
 `--output_file (string)`
 
 Path to output file. Written in JSON format.

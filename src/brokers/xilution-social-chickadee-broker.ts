@@ -1,67 +1,66 @@
 /* tslint:disable:max-line-length */
 import axios, {AxiosResponse} from "axios";
 
-export const buildListTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets?page-number=${pageNumber}&page-size=${pageSize}`;
+export const buildListTweetsUrl = (env: string, pageNumber: number, pageSize: number) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweets?page-number=${pageNumber}&page-size=${pageSize}`;
 
-export const buildPostTweetUrl = (env: string, organizationId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets`;
+export const buildPostTweetUrl = (env: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweets`;
 
-export const buildPutTweetUrl = (env: string, organizationId: string, tweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets/${tweetId}`;
+export const buildPutTweetUrl = (env: string, tweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweets/${tweetId}`;
 
-export const buildGetTweetUrl = (env: string, organizationId: string, tweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets/${tweetId}`;
+export const buildGetTweetUrl = (env: string, tweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweets/${tweetId}`;
 
-export const buildListTweetEventsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweet-events?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
+export const buildListTweetEventsUrl = (env: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweet-events?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
 
-export const buildGetTweetEventUrl = (env: string, organizationId: string, tweetEventId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweet-events/${tweetEventId}`;
+export const buildGetTweetEventUrl = (env: string, tweetEventId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweet-events/${tweetEventId}`;
 
-export const buildDeleteTweetUrl = (env: string, organizationId: string, tweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/tweets/${tweetId}`;
+export const buildDeleteTweetUrl = (env: string, tweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/tweets/${tweetId}`;
 
-export const buildAuditScheduledTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets/audit?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
+export const buildAuditScheduledTweetsUrl = (env: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets/audit?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
 
-export const buildListScheduledTweetsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
+export const buildListScheduledTweetsUrl = (env: string, pageNumber: number, pageSize: number, fromTimestamp: string, toTimestamp: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets?page-number=${pageNumber}&page-size=${pageSize}&from-timestamp=${fromTimestamp}&to-timestamp=${toTimestamp}`;
 
-export const buildPostScheduledTweetUrl = (env: string, organizationId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets`;
+export const buildPostScheduledTweetUrl = (env: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets`;
 
-export const buildPutScheduledTweetUrl = (env: string, organizationId: string, scheduledTweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets/${scheduledTweetId}`;
+export const buildPutScheduledTweetUrl = (env: string, scheduledTweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets/${scheduledTweetId}`;
 
-export const buildGetScheduledTweetUrl = (env: string, organizationId: string, scheduledTweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets/${scheduledTweetId}`;
+export const buildGetScheduledTweetUrl = (env: string, scheduledTweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets/${scheduledTweetId}`;
 
-export const buildDeleteScheduledTweetUrl = (env: string, organizationId: string, scheduledTweetId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/scheduled-tweets/${scheduledTweetId}`;
+export const buildDeleteScheduledTweetUrl = (env: string, scheduledTweetId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/scheduled-tweets/${scheduledTweetId}`;
 
-export const buildListTwitterAccountsUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/twitter-accounts?page-number=${pageNumber}&page-size=${pageSize}`;
+export const buildListTwitterAccountsUrl = (env: string, pageNumber: number, pageSize: number) =>
+    `https://${env}.chickadee.social.api.xilution.com/twitter-accounts?page-number=${pageNumber}&page-size=${pageSize}`;
 
-export const buildPostTwitterAccountUrl = (env: string, organizationId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/twitter-accounts`;
+export const buildPostTwitterAccountUrl = (env: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/twitter-accounts`;
 
-export const buildPutTwitterAccountUrl = (env: string, organizationId: string, twitterAccountId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/twitter-accounts/${twitterAccountId}`;
+export const buildPutTwitterAccountUrl = (env: string, twitterAccountId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/twitter-accounts/${twitterAccountId}`;
 
-export const buildGetTwitterAccountUrl = (env: string, organizationId: string, twitterAccountId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/twitter-accounts/${twitterAccountId}`;
+export const buildGetTwitterAccountUrl = (env: string, twitterAccountId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/twitter-accounts/${twitterAccountId}`;
 
-export const buildDeleteTwitterAccountUrl = (env: string, organizationId: string, twitterAccountId: string) =>
-    `https://${env}.chickadee.social.api.xilution.com/organizations/${organizationId}/twitter-accounts/${twitterAccountId}`;
+export const buildDeleteTwitterAccountUrl = (env: string, twitterAccountId: string) =>
+    `https://${env}.chickadee.social.api.xilution.com/twitter-accounts/${twitterAccountId}`;
 
 export const listTweets = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     pageNumber: number,
     pageSize: number,
-): Promise<AxiosResponse> => axios.get(buildListTweetsUrl(env, organizationId, pageNumber, pageSize), {
+): Promise<AxiosResponse> => axios.get(buildListTweetsUrl(env, pageNumber, pageSize), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -71,9 +70,8 @@ export const listTweets = async (
 export const createTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     tweet: any,
-): Promise<AxiosResponse> => axios.post(buildPostTweetUrl(env, organizationId), tweet, {
+): Promise<AxiosResponse> => axios.post(buildPostTweetUrl(env), tweet, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -83,10 +81,9 @@ export const createTweet = async (
 export const updateTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     tweetId: string,
     tweet: any,
-): Promise<AxiosResponse> => axios.put(buildPutTweetUrl(env, organizationId, tweetId), tweet, {
+): Promise<AxiosResponse> => axios.put(buildPutTweetUrl(env, tweetId), tweet, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -96,9 +93,8 @@ export const updateTweet = async (
 export const getTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     tweetId: string,
-): Promise<AxiosResponse> => axios.get(buildGetTweetUrl(env, organizationId, tweetId), {
+): Promise<AxiosResponse> => axios.get(buildGetTweetUrl(env, tweetId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -108,9 +104,8 @@ export const getTweet = async (
 export const deleteTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     tweetId: string,
-): Promise<AxiosResponse> => axios.delete(buildDeleteTweetUrl(env, organizationId, tweetId), {
+): Promise<AxiosResponse> => axios.delete(buildDeleteTweetUrl(env, tweetId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -120,12 +115,11 @@ export const deleteTweet = async (
 export const listTweetEvents = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     pageNumber: number,
     pageSize: number,
     fromTimestamp: string,
     toTimestamp: string,
-): Promise<AxiosResponse> => axios.get(buildListTweetEventsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
+): Promise<AxiosResponse> => axios.get(buildListTweetEventsUrl(env, pageNumber, pageSize, fromTimestamp, toTimestamp), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -135,9 +129,8 @@ export const listTweetEvents = async (
 export const getTweetEvent = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     tweetEventId: string,
-): Promise<AxiosResponse> => axios.get(buildGetTweetEventUrl(env, organizationId, tweetEventId), {
+): Promise<AxiosResponse> => axios.get(buildGetTweetEventUrl(env, tweetEventId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -147,12 +140,11 @@ export const getTweetEvent = async (
 export const auditScheduledTweets = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     pageNumber: number,
     pageSize: number,
     fromTimestamp: string,
     toTimestamp: string,
-): Promise<AxiosResponse> => axios.get(buildAuditScheduledTweetsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
+): Promise<AxiosResponse> => axios.get(buildAuditScheduledTweetsUrl(env, pageNumber, pageSize, fromTimestamp, toTimestamp), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -162,12 +154,11 @@ export const auditScheduledTweets = async (
 export const listScheduledTweets = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     pageNumber: number,
     pageSize: number,
     fromTimestamp: string,
     toTimestamp: string,
-): Promise<AxiosResponse> => axios.get(buildListScheduledTweetsUrl(env, organizationId, pageNumber, pageSize, fromTimestamp, toTimestamp), {
+): Promise<AxiosResponse> => axios.get(buildListScheduledTweetsUrl(env, pageNumber, pageSize, fromTimestamp, toTimestamp), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -177,9 +168,8 @@ export const listScheduledTweets = async (
 export const createScheduledTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     scheduledTweet: any,
-): Promise<AxiosResponse> => axios.post(buildPostScheduledTweetUrl(env, organizationId), scheduledTweet, {
+): Promise<AxiosResponse> => axios.post(buildPostScheduledTweetUrl(env), scheduledTweet, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -189,10 +179,9 @@ export const createScheduledTweet = async (
 export const updateScheduledTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     scheduledTweetId: string,
     scheduledTweet: any,
-): Promise<AxiosResponse> => axios.put(buildPutScheduledTweetUrl(env, organizationId, scheduledTweetId), scheduledTweet, {
+): Promise<AxiosResponse> => axios.put(buildPutScheduledTweetUrl(env, scheduledTweetId), scheduledTweet, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -202,9 +191,8 @@ export const updateScheduledTweet = async (
 export const getScheduledTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     scheduledTweetId: string,
-): Promise<AxiosResponse> => axios.get(buildGetScheduledTweetUrl(env, organizationId, scheduledTweetId), {
+): Promise<AxiosResponse> => axios.get(buildGetScheduledTweetUrl(env, scheduledTweetId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -214,9 +202,8 @@ export const getScheduledTweet = async (
 export const deleteScheduledTweet = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     scheduledTweetId: string,
-): Promise<AxiosResponse> => axios.delete(buildDeleteScheduledTweetUrl(env, organizationId, scheduledTweetId), {
+): Promise<AxiosResponse> => axios.delete(buildDeleteScheduledTweetUrl(env, scheduledTweetId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -226,10 +213,9 @@ export const deleteScheduledTweet = async (
 export const listTwitterAccounts = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     pageNumber: number,
     pageSize: number,
-): Promise<AxiosResponse> => axios.get(buildListTwitterAccountsUrl(env, organizationId, pageNumber, pageSize), {
+): Promise<AxiosResponse> => axios.get(buildListTwitterAccountsUrl(env, pageNumber, pageSize), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -239,9 +225,8 @@ export const listTwitterAccounts = async (
 export const createTwitterAccount = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     twitterAccount: any,
-): Promise<AxiosResponse> => axios.post(buildPostTwitterAccountUrl(env, organizationId), twitterAccount, {
+): Promise<AxiosResponse> => axios.post(buildPostTwitterAccountUrl(env), twitterAccount, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -251,10 +236,9 @@ export const createTwitterAccount = async (
 export const updateTwitterAccount = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     twitterAccountId: string,
     twitterAccount: any,
-): Promise<AxiosResponse> => axios.put(buildPutTwitterAccountUrl(env, organizationId, twitterAccountId), twitterAccount, {
+): Promise<AxiosResponse> => axios.put(buildPutTwitterAccountUrl(env, twitterAccountId), twitterAccount, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -264,9 +248,8 @@ export const updateTwitterAccount = async (
 export const getTwitterAccount = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     twitterAccountId: string,
-): Promise<AxiosResponse> => axios.get(buildGetTwitterAccountUrl(env, organizationId, twitterAccountId), {
+): Promise<AxiosResponse> => axios.get(buildGetTwitterAccountUrl(env, twitterAccountId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -276,9 +259,8 @@ export const getTwitterAccount = async (
 export const deleteTwitterAccount = async (
     env: string,
     accessToken: string,
-    organizationId: string,
     twitterAccountId: string,
-): Promise<AxiosResponse> => axios.delete(buildDeleteTwitterAccountUrl(env, organizationId, twitterAccountId), {
+): Promise<AxiosResponse> => axios.delete(buildDeleteTwitterAccountUrl(env, twitterAccountId), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
