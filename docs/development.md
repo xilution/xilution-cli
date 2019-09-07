@@ -28,7 +28,7 @@ Here are some common development time operations you'll need to work with the Xi
 
 ## To Release
 
-* Run `yarn release`
+* Run `yarn release`.
 
 ---
 Copyright 2019 Teapot, LLC.  
