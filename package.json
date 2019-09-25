@@ -29,11 +29,15 @@
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.136",
+    "@types/mime-types": "^2.1.0",
+    "@types/recursive-readdir": "^2.2.0",
     "@types/uuid": "^3.4.5",
     "@types/yargs": "^13.0.1",
     "axios": "^0.19.0",
     "date-fns": "^1.30.1",
     "lodash": "^4.17.15",
+    "mime-types": "^2.1.24",
+    "recursive-readdir": "^2.2.2",
     "uuid": "^3.3.2",
     "yargs": "^13.2.4"
   },

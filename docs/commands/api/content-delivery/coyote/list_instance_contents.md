@@ -1,26 +1,30 @@
 [<- api](../../../api/index.md)
 
-# list_instances
+# list_instance_contents
 
 ## Description
 
-Lists Fox instances.
+Lists Coyote instance contents.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox list_instances [options]
+xln-cli api content_delivery coyote list_instance_contents [options]
 ```
 
 ## Options
+
+`--instance_id (string)`
+
+A Coyote instance ID. Required.
 
 `--page_number (number)`
 
 The page number. Required.
 
-`--page_size (number)`
+`--page_marker (string)`
 
-The page size. Required.
+The page marker.
 
 `--output_file (string)`
 

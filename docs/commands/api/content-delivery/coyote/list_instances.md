@@ -4,12 +4,12 @@
 
 ## Description
 
-Lists Fox instances.
+Lists Coyote instances.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox list_instances [options]
+xln-cli api content_delivery coyote list_instances [options]
 ```
 
 ## Options

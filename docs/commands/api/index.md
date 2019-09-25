@@ -45,6 +45,17 @@ Hierarchy: `<product_category> / <product_name> / <operation>`.
   	* [reprovision_instance](integration/fox/reprovision_instance.md)
   	* [update_instance](integration/fox/update_instance.md)
   	* [update_instance_image](integration/fox/update_instance_image.md)
+* content-delivery
+  * coyote
+  	* [create_instance](content-delivery/coyote/create_instance.md)
+  	* [delete_instance](content-delivery/coyote/delete_instance.md)
+  	* [deprovision_instance](content-delivery/coyote/deprovision_instance.md)
+  	* [get_instance](content-delivery/coyote/get_instance.md)
+  	* [get_instance_status](content-delivery/coyote/get_instance_status.md)
+  	* [list_instances](content-delivery/coyote/list_instances.md)
+  	* [provision_instance](content-delivery/coyote/provision_instance.md)
+  	* [reprovision_instance](content-delivery/coyote/reprovision_instance.md)
+  	* [update_instance](content-delivery/coyote/update_instance.md)
 * social
   * chickadee
   	* [create_tweet](social/chickadee/create_tweet.md)

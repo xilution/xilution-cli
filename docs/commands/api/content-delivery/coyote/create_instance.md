@@ -1,26 +1,22 @@
 [<- api](../../../api/index.md)
 
-# list_instances
+# create_instance
 
 ## Description
 
-Lists Fox instances.
+Creates a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox list_instances [options]
+xln-cli api content_delivery coyote create_instance [options]
 ```
 
 ## Options
 
-`--page_number (number)`
+`--input_file (string)`
 
-The page number. Required.
-
-`--page_size (number)`
-
-The page size. Required.
+Path to JSON formatted input file. Required.
 
 `--output_file (string)`
 

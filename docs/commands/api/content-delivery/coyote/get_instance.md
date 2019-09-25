@@ -1,26 +1,22 @@
 [<- api](../../../api/index.md)
 
-# list_instances
+# get_instance
 
 ## Description
 
-Lists Fox instances.
+Gets a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox list_instances [options]
+xln-cli api content_delivery coyote get_instance [options]
 ```
 
 ## Options
 
-`--page_number (number)`
+`--instance_id (string)`
 
-The page number. Required.
-
-`--page_size (number)`
-
-The page size. Required.
+A Coyote instance ID. Required.
 
 `--output_file (string)`
 
