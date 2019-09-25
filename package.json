@@ -19,7 +19,7 @@
   "homepage": "https://github.com/xilution/xilution-cli",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "lint": "tslint 'src/**/*.ts' '__tests__/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts' 'test/**/*.ts'",
     "release": "yarn build && semantic-release --ci false",
     "start": "ts-node ./src/index.ts",
     "test": "yarn test:unit",
