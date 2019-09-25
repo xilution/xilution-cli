@@ -2,7 +2,8 @@
 import axios, {AxiosResponse} from "axios";
 import {
     IExistingInstanceContent,
-    IListInstanceContentsResponse, IUploadedInstanceContent
+    IListInstanceContentsResponse,
+    IUploadedInstanceContent,
 } from "../services/api/products/content-delivery/coyote/@types";
 
 export const buildListInstancesUrl = (env: string, pageNumber: number, pageSize: number) =>
@@ -152,7 +153,7 @@ export const deleteInstanceContent = async (
     accessToken: string,
     instanceId: string,
     key: string,
-): Promise<AxiosResponse<{message?: string}>> => axios.delete(buildDeleteInstanceContentUrl(env, instanceId, key), {
+): Promise<AxiosResponse<{ message?: string }>> => axios.delete(buildDeleteInstanceContentUrl(env, instanceId, key), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -164,7 +165,7 @@ export const downloadInstanceContent = async (
     accessToken: string,
     instanceId: string,
     key: string,
-): Promise<AxiosResponse<IExistingInstanceContent & {message?: string}>> => axios.get(buildDownloadInstanceContentUrl(env, instanceId, key), {
+): Promise<AxiosResponse<IExistingInstanceContent & { message?: string }>> => axios.get(buildDownloadInstanceContentUrl(env, instanceId, key), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -177,7 +178,7 @@ export const listInstanceContents = async (
     instanceId: string,
     pageSize: number,
     pageMarker: string,
-): Promise<AxiosResponse<IListInstanceContentsResponse & {message?: string}>> => axios.get(buildListInstanceContentsUrl(env, instanceId, pageSize, pageMarker), {
+): Promise<AxiosResponse<IListInstanceContentsResponse & { message?: string }>> => axios.get(buildListInstanceContentsUrl(env, instanceId, pageSize, pageMarker), {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
@@ -189,7 +190,7 @@ export const uploadInstanceContents = async (
     accessToken: string,
     instanceId: string,
     uploadedInstanceContents: IUploadedInstanceContent[],
-): Promise<AxiosResponse<{message?: string}>> => axios.post(buildUploadInstanceContentsUrl(env, instanceId), uploadedInstanceContents, {
+): Promise<AxiosResponse<{ message?: string }>> => axios.post(buildUploadInstanceContentsUrl(env, instanceId), uploadedInstanceContents, {
     headers: {
         Authorization: `Bearer ${accessToken}`,
     },
