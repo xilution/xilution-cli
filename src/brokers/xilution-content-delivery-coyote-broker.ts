@@ -6,45 +6,45 @@ import {
 } from "../services/api/products/content-delivery/coyote/@types";
 
 export const buildListInstancesUrl = (env: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances?page-number=${pageNumber}&page-size=${pageSize}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances?page-number=${pageNumber}&page-size=${pageSize}`;
 
 export const buildPostInstanceUrl = (env: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances`;
 
 export const buildPutInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}`;
 
 export const buildGetInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}`;
 
 export const buildGetInstanceStatusUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/status`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/status`;
 
 export const buildDeleteInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}`;
 
 export const buildProvisionInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/provision`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/provision`;
 
 export const buildDeprovisionInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/deprovision`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/deprovision`;
 
 export const buildReprovisionInstanceUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/reprovision`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/reprovision`;
 
 export const buildDeleteInstanceContentUrl = (env: string, instanceId: string, key: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/contents/${key}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/contents/${key}`;
 
 export const buildDownloadInstanceContentUrl = (env: string, instanceId: string, key: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/contents/${key}`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/contents/${key}`;
 
 export const buildListInstanceContentsUrl = (env: string, instanceId: string, pageSize: number, pageMarker?: string) =>
     pageMarker
-        ? `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/contents?page-size=${pageSize}&page-marker=${pageMarker}`
-        : `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/contents?page-size=${pageSize}`;
+        ? `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/contents?page-size=${pageSize}&page-marker=${pageMarker}`
+        : `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/contents?page-size=${pageSize}`;
 
 export const buildUploadInstanceContentsUrl = (env: string, instanceId: string) =>
-    `https://${env}.content-delivery.coyote.api.xilution.com/instances/${instanceId}/contents`;
+    `https://${env}.coyote.content-delivery.api.xilution.com/instances/${instanceId}/contents`;
 
 export const listInstances = async (
     env: string,
