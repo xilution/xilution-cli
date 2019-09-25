@@ -1,6 +1,6 @@
 {
   "name": "@xilution/xilution-cli",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "The Xilution command line interface. Provides command line abstractions for Xilution APIs.",
   "main": "./built/index.js",
   "bin": {
