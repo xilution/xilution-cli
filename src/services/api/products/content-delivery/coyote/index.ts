@@ -301,8 +301,8 @@ export default {
                     description: "The page marker",
                     type: "string",
                 },
-                page_number: {
-                    description: "The page number",
+                page_size: {
+                    description: "The page size",
                     required: true,
                     type: "number",
                 },

@@ -18,9 +18,9 @@ xln-cli api content_delivery coyote list_instance_contents [options]
 
 A Coyote instance ID. Required.
 
-`--page_number (number)`
+`--page_size (number)`
 
-The page number. Required.
+The page size. Required.
 
 `--page_marker (string)`
 
