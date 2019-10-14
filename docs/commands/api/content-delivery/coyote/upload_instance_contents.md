@@ -14,6 +14,10 @@ xln-cli api content_delivery coyote upload_instance_content [options]
 
 ## Options
 
+`--organization_id (string)`
+
+An organization id. Required.
+
 `--input_folder (string)`
 
 Path to input folder. Wild cards are allowed. Required.

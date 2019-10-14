@@ -14,6 +14,10 @@ xln-cli api integration fox list_instances [options]
 
 ## Options
 
+`--organization_id (string)`
+
+An organization id. Required.
+
 `--page_number (number)`
 
 The page number. Required.

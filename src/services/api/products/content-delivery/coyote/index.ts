@@ -37,11 +37,12 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const instance = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
-                const createResponse = await createInstance(env, access_token, instance);
+                const createResponse = await createInstance(env, access_token, organizationId, instance);
 
                 if (createResponse.status !== 201) {
                     throw new Error(createResponse.data.message);
@@ -82,9 +83,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await deleteInstance(env, access_token, instanceId);
+                const response = await deleteInstance(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -108,11 +110,12 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
                 const key = args.key as string;
 
                 const response: AxiosResponse =
-                    await deleteInstanceContent(env, access_token, instanceId, encodeKey(key));
+                    await deleteInstanceContent(env, access_token, organizationId, instanceId, encodeKey(key));
 
                 if (response.status !== 204) {
                     throw new Error(response.data.message);
@@ -140,9 +143,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await deprovisionInstance(env, access_token, instanceId);
+                const response = await deprovisionInstance(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -164,11 +168,12 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
                 const inputKey = args.key as string;
 
                 const response: AxiosResponse<IExistingInstanceContent & { message?: string }> =
-                    await downloadInstanceContent(env, access_token, instanceId, encodeKey(inputKey));
+                    await downloadInstanceContent(env, access_token, organizationId, instanceId, encodeKey(inputKey));
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -205,9 +210,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await getInstance(env, access_token, instanceId);
+                const response = await getInstance(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -242,9 +248,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await getInstanceStatus(env, access_token, instanceId);
+                const response = await getInstanceStatus(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -266,12 +273,13 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
                 const pageSize = args.page_size as number;
                 const pageMarker = args.page_number as string;
 
                 const response: AxiosResponse<IListInstanceContentsResponse & { message?: string }> =
-                    await listInstanceContents(env, access_token, instanceId, pageSize, pageMarker);
+                    await listInstanceContents(env, access_token, organizationId, instanceId, pageSize, pageMarker);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -315,10 +323,11 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const pageNumber = args.page_number as number;
                 const pageSize = args.page_size as number;
 
-                const response = await listInstances(env, access_token, pageNumber, pageSize);
+                const response = await listInstances(env, access_token, organizationId, pageNumber, pageSize);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -359,9 +368,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await provisionInstance(env, access_token, instanceId);
+                const response = await provisionInstance(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -383,9 +393,10 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
 
-                const response = await reprovisionInstance(env, access_token, instanceId);
+                const response = await reprovisionInstance(env, access_token, organizationId, instanceId);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);
@@ -407,19 +418,20 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
                 const inputFile = args.input_file as string;
                 const buffer: Buffer = await promisify(readFile)(inputFile);
                 const instance = JSON.parse(Buffer.from(buffer).toString("ASCII"));
 
                 const updateResponse = await updateInstance(
-                    env, access_token, instanceId, instance);
+                    env, access_token, organizationId, instanceId, instance);
 
                 if (updateResponse.status !== 204) {
                     throw new Error(updateResponse.data.message);
                 }
 
-                const getResponse = await getInstance(env, access_token, instanceId);
+                const getResponse = await getInstance(env, access_token, organizationId, instanceId);
 
                 if (getResponse.status !== 200) {
                     throw new Error(getResponse.data.message);
@@ -458,6 +470,7 @@ export default {
                 const {env} = context;
                 const authentication = await getAuthentication(profile);
                 const {access_token} = authentication;
+                const organizationId = args.organization_id as string;
                 const instanceId = args.instance_id as string;
                 const inputFolder = args.input_folder as string;
                 const fileNames = await promisify(recursive)(inputFolder) as string[];
@@ -475,7 +488,8 @@ export default {
                     }));
 
                 const response: AxiosResponse<{ message?: string }> =
-                    await uploadInstanceContents(env, access_token, instanceId, uploadedInstanceContents);
+                    await uploadInstanceContents(
+                        env, access_token, organizationId, instanceId, uploadedInstanceContents);
 
                 if (response.status !== 200) {
                     throw new Error(response.data.message);

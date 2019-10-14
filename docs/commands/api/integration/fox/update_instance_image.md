@@ -14,6 +14,10 @@ xln-cli api integration fox update_instance_image [options]
 
 ## Options
 
+`--organization_id (string)`
+
+An organization id. Required.
+
 `--instance_id (string)`
 
 A Fox instance ID. Required.

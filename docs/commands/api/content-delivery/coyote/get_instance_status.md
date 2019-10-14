@@ -14,6 +14,10 @@ xln-cli api content_delivery coyote get_instance_status [options]
 
 ## Options
 
+`--organization_id (string)`
+
+An organization id. Required.
+
 `--instance_id (string)`
 
 A Coyote instance ID. Required.

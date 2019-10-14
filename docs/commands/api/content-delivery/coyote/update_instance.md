@@ -14,6 +14,10 @@ xln-cli api content_delivery coyote update_instance [options]
 
 ## Options
 
+`--organization_id (string)`
+
+An organization id. Required.
+
 `--input_file (string)`
 
 Path to JSON formatted input file. Required.
