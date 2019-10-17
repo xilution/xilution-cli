@@ -23,7 +23,7 @@
     "release": "yarn build && semantic-release --ci false",
     "start": "ts-node ./src/index.ts",
     "test": "yarn test:unit",
-    "test:unit": "jest",
+    "test:unit": "jest --testPathPattern ./test/unit/",
     "verify": "yarn lint && yarn test"
   },
   "dependencies": {
