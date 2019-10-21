@@ -13,7 +13,7 @@ At the moment, there is no account synchronization between our Test and Producti
 Once registered, some API endpoints will require activation.
 You can active Xilution products through our [Account Admin Portal (Test)](https://test.portal.xilution.com) and [Account Admin Portal (Production)](https://portal.xilution.com) sites.
 * **Node.js** -
-The Xilution CLI requires Node.js version 8.10.0 or newer to be installed on your system. 
+The Xilution CLI requires Node.js version 10.16.3 or newer to be installed on your system. 
 We recommend using the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to manage your Node.js installation(s).
 See the NVM site for installation instructions.
 * **A Node Package Manager** -
