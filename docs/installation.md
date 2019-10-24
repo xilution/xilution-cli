@@ -31,6 +31,11 @@ For example, run `yarn global upgrade @xilution/xilution-cli@1.3.0` to install t
 
 * To verify your installation, run `xln-cli --version`.
 
+## Configure
+
+* Once you have installed the Xilution CLI, you will want to set up your configuration.
+See [Config](./config.md) for Xilution CLI configuration details.
+
 ## Upgrade
 
 * To upgrade the Xilution CLI to the latest version, run `yarn global upgrade @xilution/xilution-cli --latest`.
