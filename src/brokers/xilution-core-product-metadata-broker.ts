@@ -1,5 +1,4 @@
 import axios, {AxiosResponse} from "axios";
-import {v4} from "uuid";
 
 export const buildListAllProductsUrl = (env: string) =>
     `https://${env}.product-metadata.core.api.xilution.com/products`;
