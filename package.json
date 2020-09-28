@@ -20,11 +20,11 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tslint 'src/**/*.ts' 'test/**/*.ts'",
-    "release": "yarn build && semantic-release --ci false",
+    "release": "npm run build && semantic-release --ci false",
     "start": "ts-node ./src/index.ts",
-    "test": "yarn test:unit",
+    "test": "npm run test:unit",
     "test:unit": "jest --testPathPattern ./test/unit/",
-    "verify": "yarn lint && yarn test"
+    "verify": "npm run lint && npm run test"
   },
   "dependencies": {
     "@types/lodash": "^4.14.136",
@@ -58,7 +58,6 @@
   },
   "engines": {
     "node": ">=10.16.3",
-    "yarn": ">=1.13.0",
     "npm": ">=6.9.0"
   },
   "release": {
