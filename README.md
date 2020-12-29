@@ -2,6 +2,8 @@
 
 Provides command line abstractions for Xilution APIs.
 
+[![Build Status](https://travis-ci.org/xilution/xilution-cli.svg?branch=master)](https://travis-ci.org/xilution/xilution-cli)
+
 # Table of Contents
 
 * [Installation](./docs/installation.md)
