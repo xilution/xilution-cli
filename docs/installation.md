@@ -8,17 +8,13 @@
 The Xilution CLI interfaces with the Xilution API.
 Most Xilution API endpoints require a Xilution Account to function properly.
 Furthermore, many Xilution API endpoints require Xilution Product activation.
-You can create Xilution accounts through our [Registration (Test)](https://test.register.xilution.com) and [Registration (Production)](https://register.xilution.com) sites.
-At the moment, there is no account synchronization between our Test and Production environments.
+You can create a Xilution account through our [Registration](https://prod.register.xilution.com) site.
 Once registered, some API endpoints will require activation.
-You can active Xilution products through our [Account Admin Portal (Test)](https://test.portal.xilution.com) and [Account Admin Portal (Production)](https://portal.xilution.com) sites.
+You can active Xilution products through our [Account Admin Portal](https://prod.portal.xilution.com).
 * **Node.js** -
 The Xilution CLI requires Node.js version 10.16.3 or newer to be installed on your system. 
 We recommend using the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to manage your Node.js installation(s).
 See the NVM site for installation instructions.
-* **A Node Package Manager** -
-[Yarn](https://yarnpkg.com/en/) is the Node.js package manager we use and recommend.
-See the Yarn site for installation instructions.
 
 ## Install
 
