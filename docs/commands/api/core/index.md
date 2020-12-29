@@ -1,4 +1,4 @@
-[<- xln-cli . api](../index.md)
+[<- api](../index.md)
 
 # api core
 
