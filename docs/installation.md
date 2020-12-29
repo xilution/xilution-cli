@@ -22,10 +22,10 @@ See the Yarn site for installation instructions.
 
 ## Install
 
-* To install the Xilution CLI, run `yarn global add @xilution/xilution-cli`.
+* To install the Xilution CLI, run `npm install -g @xilution/xilution-cli`.
 
-* To install the Xilution CLI to a specific version, run `yarn global upgrade @xilution/xilution-cli@{version}`.
-For example, run `yarn global upgrade @xilution/xilution-cli@1.3.0` to install to version 1.3.0.
+* To install the Xilution CLI to a specific version, run `npm install -g @xilution/xilution-cli@{version}`.
+For example, run `npm install -g @xilution/xilution-cli@1.3.0` to install to version 1.3.0.
 
 ## Verify
 
@@ -38,7 +38,7 @@ See [Config](./config.md) for Xilution CLI configuration details.
 
 ## Upgrade
 
-* To upgrade the Xilution CLI to the latest version, run `yarn global upgrade @xilution/xilution-cli --latest`.
+* To upgrade the Xilution CLI to the latest version, run `npm update -g @xilution/xilution-cli`.
 
 The Xilution CLI changes frequently as we add more and more products to [our portfolio of APIs](https://products.xilution.com).
 If your version of the CLI does not include something you expect, try upgrading.
