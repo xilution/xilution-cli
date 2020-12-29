@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# update_instance
+# create_instance
 
 ## Description
 
-Updates a Coyote instance.
+Creates a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote update_instance [options]
+xln-cli api content_delivery coyote create_instance [options]
 ```
 
 ## Options
@@ -21,10 +21,6 @@ An organization id. Required.
 `--input_file (string)`
 
 Path to JSON formatted input file. Required.
-
-`--instance_id (string)`
-
-A Coyote instance ID. Required.
 
 `--output_file (string)`
 

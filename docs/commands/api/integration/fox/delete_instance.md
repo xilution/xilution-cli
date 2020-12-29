@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . integration . fox](index.md)
 
 # delete_instance
 

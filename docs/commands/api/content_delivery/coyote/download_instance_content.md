@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
 # download_instance_content
 

@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . core . product_metadata](index.md)
 
 # list_all_products
 

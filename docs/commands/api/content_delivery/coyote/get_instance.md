@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# upload_instance_content
+# get_instance
 
 ## Description
 
-Uploads Coyote instance content.
+Gets a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote upload_instance_content [options]
+xln-cli api content_delivery coyote get_instance [options]
 ```
 
 ## Options
@@ -18,13 +18,13 @@ xln-cli api content_delivery coyote upload_instance_content [options]
 
 An organization id. Required.
 
-`--input_folder (string)`
-
-Path to input folder. Wild cards are allowed. Required.
-
 `--instance_id (string)`
 
 A Coyote instance ID. Required.
+
+`--output_file (string)`
+
+Path to output file. Written in JSON format.
 
 ---
 Copyright 2019-2020 Teapot, LLC.  

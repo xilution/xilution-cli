@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . core . authentication](index.md)
 
 # oauth_token
 

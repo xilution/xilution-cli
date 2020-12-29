@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# delete_instance_content
+# deprovision_instance
 
 ## Description
 
-Deletes Coyote instance content.
+Deprovision a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote delete_instance_content [options]
+xln-cli api content_delivery coyote deprovision_instance [options]
 ```
 
 ## Options
@@ -21,10 +21,6 @@ An organization id. Required.
 `--instance_id (string)`
 
 A Coyote instance ID. Required.
-
-`--key (string)`
-
-A Coyote content key. Required.
 
 ---
 Copyright 2019-2020 Teapot, LLC.  

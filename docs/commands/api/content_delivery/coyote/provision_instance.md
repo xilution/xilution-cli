@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
 # provision_instance
 

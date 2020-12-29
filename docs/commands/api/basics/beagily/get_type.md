@@ -1,4 +1,4 @@
-[<- api](../../../api/index.md)
+[<- api . basics . beagily](index.md)
 
 # get_type
 

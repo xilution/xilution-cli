@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# list_instance_contents
+# list_instances
 
 ## Description
 
-Lists Coyote instance contents.
+Lists Coyote instances.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote list_instance_contents [options]
+xln-cli api content_delivery coyote list_instances [options]
 ```
 
 ## Options
@@ -18,17 +18,13 @@ xln-cli api content_delivery coyote list_instance_contents [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--page_number (number)`
 
-A Coyote instance ID. Required.
+The page number. Required.
 
 `--page_size (number)`
 
 The page size. Required.
-
-`--page_marker (string)`
-
-The page marker.
 
 `--output_file (string)`
 

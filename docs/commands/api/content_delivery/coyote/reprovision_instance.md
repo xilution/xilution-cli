@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# delete_instance
+# reprovision_instance
 
 ## Description
 
-Deletes a Coyote instance.
+Reprovision a Coyote instance.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote delete_instance [options]
+xln-cli api content_delivery coyote reprovision_instance [options]
 ```
 
 ## Options

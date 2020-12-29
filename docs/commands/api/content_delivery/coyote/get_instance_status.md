@@ -1,15 +1,15 @@
-[<- api](../../../api/index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# reprovision_instance
+# get_instance_status
 
 ## Description
 
-Reprovision a Coyote instance.
+Gets a Coyote instance's status.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote reprovision_instance [options]
+xln-cli api content_delivery coyote get_instance_status [options]
 ```
 
 ## Options
