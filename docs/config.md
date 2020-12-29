@@ -9,12 +9,6 @@ Use it as a guide when you edit your `~/.xilution/config.json` file.
 
 ```json
 {
-  "test": {
-    "env": "test",
-    "organizationId": "5f371e6ab0f04c268d707d3da67a9dfb",
-    "clientId": "8f5d594f8a964052811ee5efdf56fe54",
-    "clientSecret": "2cd79e7a30954c4299863bb3f3dbcc21"
-  },
   "prod": {
     "env": "prod",
     "organizationId": "b24aa43bb5d647fcac226e11724ab797",
