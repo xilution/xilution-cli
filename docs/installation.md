@@ -46,5 +46,5 @@ See [our releases](https://github.com/xilution/xilution-cli/releases) for the la
 * To uninstall the Xilution CLI, run `yarn global remove @xilution/xilution-cli`.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
