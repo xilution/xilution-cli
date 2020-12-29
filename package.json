@@ -19,13 +19,13 @@
   "homepage": "https://github.com/xilution/xilution-cli",
   "scripts": {
     "build": "npx tsc",
-    "start": "ts-node ./src/index.ts",
+    "start": "npx ts-node ./src/index.ts",
     "format": "npx prettier --write .",
     "lint": "npx prettier --check .",
     "test": "npm run test:unit",
-    "test:unit": "jest --testPathPattern ./test/unit/",
+    "test:unit": "jest --testPathPattern ./tests/unit/",
     "verify": "npm run lint && npm run test",
-    "release": "npm run build && semantic-release --ci false"
+    "release": "npm run build && npx semantic-release --ci false"
   },
   "dependencies": {
     "axios": "^0.21.1",
