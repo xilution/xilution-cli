@@ -76,5 +76,5 @@ Hierarchy: `<product_category> / <product_name> / <operation>`.
   	* [list_twitter_accounts](social/chickadee/list_twitter_accounts.md)
   	* [update_twitter_account](social/chickadee/update_twitter_account.md)
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

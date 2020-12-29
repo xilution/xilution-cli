@@ -31,5 +31,5 @@ The start timestamp in ISO 8601 format. Required.
 The end timestamp in ISO 8601 format. Required.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

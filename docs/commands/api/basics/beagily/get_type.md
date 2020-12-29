@@ -23,5 +23,5 @@ The type's name. Required.
 Path to output file. Written in JSON format.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

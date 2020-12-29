@@ -23,5 +23,5 @@ An organization id. Required.
 A Fox instance ID. Required.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

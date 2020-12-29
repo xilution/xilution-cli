@@ -19,5 +19,5 @@ xln-cli api social chickadee delete_tweet [options]
 A Chickadee tweet ID. Required.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

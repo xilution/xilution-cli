@@ -27,5 +27,5 @@ A Coyote instance ID. Required.
 A Coyote content key. Required.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

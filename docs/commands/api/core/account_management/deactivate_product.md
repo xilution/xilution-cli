@@ -19,5 +19,5 @@ xln-cli api core account_management deactivate_product [options]
 A Xilution product ID. Required.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
