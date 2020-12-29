@@ -16,7 +16,6 @@ Use it as a guide when you edit your `~/.xilution/config.json` file.
     "clientSecret": "6b7c6a3a2b8846309838b0505c1e400c"
   }
 }
-
 ```
 
 Let's break down the components of this JSON formatted file.
@@ -25,7 +24,7 @@ The top level property, `default`, is the name given to a context profile.
 You can create as many context profiles as you need.
 You can pass a `--profile (string)` option when invoking Xilution CLI commands to change your context profile.
 
-`env` is required and references the Xilution environment. 
+`env` is required and references the Xilution environment.
 We currently offer only one environment: `prod`.
 
 `organizationId` is a Xilution organization ID.
@@ -40,5 +39,6 @@ The Xilution CLI will first try to authenticate with `clientId` and `clientSecre
 If the `clientSecret` is not present, the Xilution CLI will try to use `clientId`, `username` and `password to authenticate.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

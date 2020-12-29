@@ -1,6 +1,5 @@
-language:
-    node_js
+language: node_js
 install:
-    - npm i
+  - npm i
 script:
-    - npm run verify
+  - npm run verify

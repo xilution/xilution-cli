@@ -1,15 +1,15 @@
 [<- api . content_delivery . coyote](index.md)
 
-# update_instance
+# create_pipeline
 
 ## Description
 
-Updates a Coyote instance.
+Creates a Coyote pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote update_instance [options]
+xln-cli api content_delivery coyote create_pipeline [options]
 ```
 
 ## Options
@@ -22,14 +22,11 @@ An organization id. Required.
 
 Path to JSON formatted input file. Required.
 
-`--instance_id (string)`
-
-A Coyote instance ID. Required.
-
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

@@ -1,15 +1,15 @@
 [<- api . integration . fox](index.md)
 
-# update_instance
+# update_pipeline
 
 ## Description
 
-Updates a Fox instance.
+Updates a Fox pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox update_instance [options]
+xln-cli api integration fox update_pipeline [options]
 ```
 
 ## Options
@@ -22,14 +22,15 @@ An organization id. Required.
 
 Path to JSON formatted input file. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Fox instance ID. Required.
+A Fox pipeline ID. Required.
 
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

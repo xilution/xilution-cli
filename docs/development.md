@@ -7,29 +7,30 @@ Here are some common development time operations you'll need to work with the Xi
 
 ## First Things First
 
-* Run `npm i` to load dependencies.
+- Run `npm i` to load dependencies.
 
 ## To Verify
 
-* Run `npm run verify`. (Includes linting and testing.)
+- Run `npm run verify`. (Includes linting and testing.)
 
 ## To Build
 
-* Run `npm run build`.
+- Run `npm run build`.
 
 ## To Run
 
-* Run `npm run start`. (Will show usage.)
+- Run `npm run start`. (Will show usage.)
 
 ## To See Usage
 
-* Run `npm link` to make command executable
-* Run `xln-cli --help` to see CLI usage
+- Run `npm link` to make command executable
+- Run `xln-cli --help` to see CLI usage
 
 ## To Release
 
-* Run `npm run release`.
+- Run `npm run release`.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

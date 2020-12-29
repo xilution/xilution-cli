@@ -1,15 +1,15 @@
 [<- api . content_delivery . coyote](index.md)
 
-# get_instance
+# provision_pipeline
 
 ## Description
 
-Gets a Coyote instance.
+Provision a Coyote pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote get_instance [options]
+xln-cli api content_delivery coyote provision_pipeline [options]
 ```
 
 ## Options
@@ -18,14 +18,11 @@ xln-cli api content_delivery coyote get_instance [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Coyote instance ID. Required.
-
-`--output_file (string)`
-
-Path to output file. Written in JSON format.
+A Coyote pipeline ID. Required.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

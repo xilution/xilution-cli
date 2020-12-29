@@ -1,15 +1,15 @@
 [<- api . integration . fox](index.md)
 
-# get_instance
+# get_pipeline
 
 ## Description
 
-Gets a Fox instance.
+Gets a Fox pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox get_instance [options]
+xln-cli api integration fox get_pipeline [options]
 ```
 
 ## Options
@@ -18,14 +18,15 @@ xln-cli api integration fox get_instance [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Fox instance ID. Required.
+A Fox pipeline ID. Required.
 
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

@@ -1,15 +1,15 @@
-[<- api . integration . fox](index.md)
+[<- api . content_delivery . coyote](index.md)
 
-# create_instance
+# get_pipeline
 
 ## Description
 
-Creates a Fox instance.
+Gets a Coyote pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox create_instance [options]
+xln-cli api content_delivery coyote get_pipeline [options]
 ```
 
 ## Options
@@ -18,14 +18,15 @@ xln-cli api integration fox create_instance [options]
 
 An organization id. Required.
 
-`--input_file (string)`
+`--pipeline_id (string)`
 
-Path to JSON formatted input file. Required.
+A Coyote pipeline ID. Required.
 
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

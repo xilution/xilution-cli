@@ -1,15 +1,15 @@
 [<- api . content_delivery . coyote](index.md)
 
-# reprovision_instance
+# deprovision_pipeline
 
 ## Description
 
-Reprovision a Coyote instance.
+Deprovision a Coyote pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote reprovision_instance [options]
+xln-cli api content_delivery coyote deprovision_pipeline [options]
 ```
 
 ## Options
@@ -18,10 +18,11 @@ xln-cli api content_delivery coyote reprovision_instance [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Coyote instance ID. Required.
+A Coyote pipeline ID. Required.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

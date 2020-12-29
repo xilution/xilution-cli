@@ -1,15 +1,15 @@
 [<- api . integration . fox](index.md)
 
-# list_instances
+# create_pipeline
 
 ## Description
 
-Lists Fox instances.
+Creates a Fox pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox list_instances [options]
+xln-cli api integration fox create_pipeline [options]
 ```
 
 ## Options
@@ -18,18 +18,15 @@ xln-cli api integration fox list_instances [options]
 
 An organization id. Required.
 
-`--page_number (number)`
+`--input_file (string)`
 
-The page number. Required.
-
-`--page_size (number)`
-
-The page size. Required.
+Path to JSON formatted input file. Required.
 
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

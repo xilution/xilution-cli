@@ -1,15 +1,15 @@
 [<- api . content_delivery . coyote](index.md)
 
-# list_instances
+# list_pipelines
 
 ## Description
 
-Lists Coyote instances.
+Lists Coyote pipelines.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote list_instances [options]
+xln-cli api content_delivery coyote list_pipelines [options]
 ```
 
 ## Options
@@ -31,5 +31,6 @@ The page size. Required.
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

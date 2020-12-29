@@ -1,212 +1,174 @@
 /* tslint:disable:max-line-length */
-import axios, {AxiosResponse} from "axios";
-import {
-    IExistingInstanceContent,
-    IListInstanceContentsResponse,
-    IUploadedInstanceContent,
-} from "../services/api/products/content-delivery/coyote/@types";
+import axios, { AxiosResponse } from "axios";
 
-export const buildListInstancesUrl = (env: string, organizationId: string, pageNumber: number, pageSize: number) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances?page-number=${pageNumber}&page-size=${pageSize}`;
+export const buildListPipelinesUrl = (
+  env: string,
+  organizationId: string,
+  pageNumber: number,
+  pageSize: number
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines?page-number=${pageNumber}&page-size=${pageSize}`;
 
-export const buildPostInstanceUrl = (env: string, organizationId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances`;
+export const buildPostPipelineUrl = (env: string, organizationId: string) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines`;
 
-export const buildPutInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}`;
+export const buildPutPipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}`;
 
-export const buildGetInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}`;
+export const buildGetPipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}`;
 
-export const buildGetInstanceStatusUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/status`;
+export const buildDeletePipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}`;
 
-export const buildDeleteInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}`;
+export const buildProvisionPipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}/provision`;
 
-export const buildProvisionInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/provision`;
+export const buildDeprovisionPipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}/deprovision`;
 
-export const buildDeprovisionInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/deprovision`;
+export const buildReprovisionPipelineUrl = (
+  env: string,
+  organizationId: string,
+  pipelineId: string
+) =>
+  `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/pipelines/${pipelineId}/reprovision`;
 
-export const buildReprovisionInstanceUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/reprovision`;
-
-export const buildDeleteInstanceContentUrl = (env: string, organizationId: string, instanceId: string, key: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/contents/${key}`;
-
-export const buildDownloadInstanceContentUrl = (env: string, organizationId: string, instanceId: string, key: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/contents/${key}`;
-
-export const buildListInstanceContentsUrl = (env: string, organizationId: string, instanceId: string, pageSize: number, pageMarker?: string) =>
-    pageMarker
-        ? `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/contents?page-size=${pageSize}&page-marker=${pageMarker}`
-        : `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/contents?page-size=${pageSize}`;
-
-export const buildUploadInstanceContentsUrl = (env: string, organizationId: string, instanceId: string) =>
-    `https://${env}.coyote.content-delivery.api.xilution.com/organizations/${organizationId}/instances/${instanceId}/contents`;
-
-export const listInstances = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    pageNumber: number,
-    pageSize: number,
-): Promise<AxiosResponse> => axios.get(buildListInstancesUrl(env, organizationId, pageNumber, pageSize), {
+export const listPipelines = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pageNumber: number,
+  pageSize: number
+): Promise<AxiosResponse> =>
+  axios.get(buildListPipelinesUrl(env, organizationId, pageNumber, pageSize), {
     headers: {
-        Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
     },
     validateStatus: () => true,
-});
+  });
 
-export const createInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instance: any,
-): Promise<AxiosResponse> => axios.post(buildPostInstanceUrl(env, organizationId), instance, {
+export const createPipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipeline: any
+): Promise<AxiosResponse> =>
+  axios.post(buildPostPipelineUrl(env, organizationId), pipeline, {
     headers: {
-        Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
     },
     validateStatus: () => true,
-});
+  });
 
-export const updateInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-    instance: any,
-): Promise<AxiosResponse> => axios.put(buildPutInstanceUrl(env, organizationId, instanceId), instance, {
+export const updatePipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string,
+  pipeline: any
+): Promise<AxiosResponse> =>
+  axios.put(buildPutPipelineUrl(env, organizationId, pipelineId), pipeline, {
     headers: {
-        Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
     },
     validateStatus: () => true,
-});
+  });
 
-export const getInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.get(buildGetInstanceUrl(env, organizationId, instanceId), {
+export const getPipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string
+): Promise<AxiosResponse> =>
+  axios.get(buildGetPipelineUrl(env, organizationId, pipelineId), {
     headers: {
-        Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
     },
     validateStatus: () => true,
-});
+  });
 
-export const getInstanceStatus = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.get(buildGetInstanceStatusUrl(env, organizationId, instanceId), {
+export const deletePipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string
+): Promise<AxiosResponse> =>
+  axios.delete(buildDeletePipelineUrl(env, organizationId, pipelineId), {
     headers: {
-        Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
     },
     validateStatus: () => true,
-});
+  });
 
-export const deleteInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.delete(buildDeleteInstanceUrl(env, organizationId, instanceId), {
-    headers: {
+export const provisionPipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string
+): Promise<AxiosResponse> =>
+  axios.put(
+    buildProvisionPipelineUrl(env, organizationId, pipelineId),
+    undefined,
+    {
+      headers: {
         Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
+      },
+      validateStatus: () => true,
+    }
+  );
 
-export const provisionInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.put(buildProvisionInstanceUrl(env, organizationId, instanceId), undefined, {
-    headers: {
+export const deprovisionPipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string
+): Promise<AxiosResponse> =>
+  axios.put(
+    buildDeprovisionPipelineUrl(env, organizationId, pipelineId),
+    undefined,
+    {
+      headers: {
         Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
+      },
+      validateStatus: () => true,
+    }
+  );
 
-export const deprovisionInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.put(buildDeprovisionInstanceUrl(env, organizationId, instanceId), undefined, {
-    headers: {
+export const reprovisionPipeline = async (
+  env: string,
+  accessToken: string,
+  organizationId: string,
+  pipelineId: string
+): Promise<AxiosResponse> =>
+  axios.put(
+    buildReprovisionPipelineUrl(env, organizationId, pipelineId),
+    undefined,
+    {
+      headers: {
         Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
-
-export const reprovisionInstance = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-): Promise<AxiosResponse> => axios.put(buildReprovisionInstanceUrl(env, organizationId, instanceId), undefined, {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
-
-export const deleteInstanceContent = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-    key: string,
-): Promise<AxiosResponse<{ message?: string }>> => axios.delete(buildDeleteInstanceContentUrl(env, organizationId, instanceId, key), {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
-
-export const downloadInstanceContent = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-    key: string,
-): Promise<AxiosResponse<IExistingInstanceContent & { message?: string }>> => axios.get(buildDownloadInstanceContentUrl(env, organizationId, instanceId, key), {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
-
-export const listInstanceContents = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-    pageSize: number,
-    pageMarker: string,
-): Promise<AxiosResponse<IListInstanceContentsResponse & { message?: string }>> => axios.get(buildListInstanceContentsUrl(env, organizationId, instanceId, pageSize, pageMarker), {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
-
-export const uploadInstanceContents = async (
-    env: string,
-    accessToken: string,
-    organizationId: string,
-    instanceId: string,
-    uploadedInstanceContents: IUploadedInstanceContent[],
-): Promise<AxiosResponse<{ message?: string }>> => axios.post(buildUploadInstanceContentsUrl(env, organizationId, instanceId), uploadedInstanceContents, {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-    validateStatus: () => true,
-});
+      },
+      validateStatus: () => true,
+    }
+  );
 /* tslint:enable */

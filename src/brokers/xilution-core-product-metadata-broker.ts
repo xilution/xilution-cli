@@ -1,10 +1,9 @@
-import axios, {AxiosResponse} from "axios";
+import axios, { AxiosResponse } from "axios";
 
 export const buildListAllProductsUrl = (env: string) =>
-    `https://${env}.product-metadata.core.api.xilution.com/products`;
+  `https://${env}.product-metadata.core.api.xilution.com/products`;
 
-export const listAllProducts = async (
-    env: string,
-): Promise<AxiosResponse> => axios.get(buildListAllProductsUrl(env), {
+export const listAllProducts = async (env: string): Promise<AxiosResponse> =>
+  axios.get(buildListAllProductsUrl(env), {
     validateStatus: () => true,
-});
+  });

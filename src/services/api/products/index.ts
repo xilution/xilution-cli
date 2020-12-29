@@ -5,11 +5,11 @@ import integration from "./integration";
 import social from "./social";
 
 export default {
-    productCategories: {
-        basics,
-        content_delivery,
-        core,
-        integration,
-        social,
-    },
+  productCategories: {
+    basics,
+    content_delivery,
+    core,
+    integration,
+    social,
+  },
 };

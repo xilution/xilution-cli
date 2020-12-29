@@ -1,15 +1,15 @@
 [<- api . integration . fox](index.md)
 
-# deprovision_instance
+# provision_pipeline
 
 ## Description
 
-Deprovision a Fox instance.
+Provision a Fox pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox deprovision_instance [options]
+xln-cli api integration fox provision_pipeline [options]
 ```
 
 ## Options
@@ -18,10 +18,11 @@ xln-cli api integration fox deprovision_instance [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Fox instance ID. Required.
+A Fox pipeline ID. Required.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

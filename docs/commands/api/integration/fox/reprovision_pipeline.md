@@ -1,15 +1,15 @@
 [<- api . integration . fox](index.md)
 
-# update_instance_image
+# reprovision_pipeline
 
 ## Description
 
-Updates a Fox instance's Docker image.
+Reprovision a Fox pipeline.
 
 ## Synopsis
 
 ```
-xln-cli api integration fox update_instance_image [options]
+xln-cli api integration fox reprovision_pipeline [options]
 ```
 
 ## Options
@@ -18,10 +18,11 @@ xln-cli api integration fox update_instance_image [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--pipeline_id (string)`
 
-A Fox instance ID. Required.
+A Fox pipeline ID. Required.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

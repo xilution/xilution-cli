@@ -1,15 +1,15 @@
-[<- api . content_delivery . coyote](index.md)
+[<- api . integration . fox](index.md)
 
-# list_instance_contents
+# list_pipelines
 
 ## Description
 
-Lists Coyote instance contents.
+Lists Fox pipelines.
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery coyote list_instance_contents [options]
+xln-cli api integration fox list_pipelines [options]
 ```
 
 ## Options
@@ -18,22 +18,19 @@ xln-cli api content_delivery coyote list_instance_contents [options]
 
 An organization id. Required.
 
-`--instance_id (string)`
+`--page_number (number)`
 
-A Coyote instance ID. Required.
+The page number. Required.
 
 `--page_size (number)`
 
 The page size. Required.
-
-`--page_marker (string)`
-
-The page marker.
 
 `--output_file (string)`
 
 Path to output file. Written in JSON format.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

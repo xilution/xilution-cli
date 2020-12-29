@@ -23,5 +23,6 @@ A thing ID. Required.
 A thing's type. Required.
 
 ---
+
 Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
