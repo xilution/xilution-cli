@@ -7,28 +7,28 @@ Here are some common development time operations you'll need to work with the Xi
 
 ## First Things First
 
-* Run `yarn` to load dependencies.
+* Run `npm i` to load dependencies.
 
 ## To Verify
 
-* Run `yarn verify`. (Includes linting and testing.)
+* Run `npm run verify`. (Includes linting and testing.)
 
 ## To Build
 
-* Run `yarn build`.
+* Run `npm run build`.
 
 ## To Run
 
-* Run `yarn start`. (Will show usage.)
+* Run `npm run start`. (Will show usage.)
 
 ## To See Usage
 
-* Run `yarn link` to make command executable
+* Run `npm run link` to make command executable
 * Run `xln-cli --help` to see CLI usage
 
 ## To Release
 
-* Run `yarn release`.
+* Run `npm run release`.
 
 ---
 Copyright 2019 Teapot, LLC.  
