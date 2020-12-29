@@ -9,7 +9,7 @@ Use it as a guide when you edit your `~/.xilution/config.json` file.
 
 ```json
 {
-  "prod": {
+  "default": {
     "env": "prod",
     "organizationId": "b24aa43bb5d647fcac226e11724ab797",
     "clientId": "b8b1a73c4c314f62bfb8c7ff181dc3f6",
@@ -21,13 +21,12 @@ Use it as a guide when you edit your `~/.xilution/config.json` file.
 
 Let's break down the components of this JSON formatted file.
 
-The top level properties `test` and `prod` are the names given to two context profiles.
+The top level property, `default`, is the name given to a context profile.
+You can create as many context profiles as you need.
 You can pass a `--profile (string)` option when invoking Xilution CLI commands to change your context profile.
 
 `env` is required and references the Xilution environment. 
-We offer two environments `test` and `prod`. 
-`test` refers to our Test or Sandbox environment.
-`prod` refers to our Production environment.
+We currently offer only one environment: `prod`.
 
 `organizationId` is a Xilution organization ID.
 
