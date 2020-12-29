@@ -1,4 +1,4 @@
-# Xilution CLI
+# Xilution Command Line Interface (CLI)
 
 Provides command line abstractions for Xilution APIs.
 
