@@ -31,5 +31,5 @@ Here are some common development time operations you'll need to work with the Xi
 * Run `npm run release`.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
