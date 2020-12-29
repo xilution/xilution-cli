@@ -1,6 +1,6 @@
 language:
     node_js
 install:
-    - yarn
+    - npm i
 script:
-    - yarn verify
+    - npm run verify
