@@ -40,5 +40,5 @@ The Xilution CLI will first try to authenticate with `clientId` and `clientSecre
 If the `clientSecret` is not present, the Xilution CLI will try to use `clientId`, `username` and `password to authenticate.
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
