@@ -30,5 +30,5 @@ If a "default" context profile is not found, the Xilution CLI will use the _firs
 * [api](commands/api/index.md)
 
 ---
-Copyright 2019 Teapot, LLC.  
+Copyright 2019-2020 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
