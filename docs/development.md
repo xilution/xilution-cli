@@ -23,7 +23,7 @@ Here are some common development time operations you'll need to work with the Xi
 
 ## To See Usage
 
-* Run `npm run link` to make command executable
+* Run `npm link` to make command executable
 * Run `xln-cli --help` to see CLI usage
 
 ## To Release
