@@ -18,7 +18,7 @@
 
 ## Install
 
-- To install the Xilution CLI, run `npm install -g @xilution/xilution-cli`.
+- To install the latest version of the Xilution CLI, run `npm install -g @xilution/xilution-cli@latest`.
 
 - To install the Xilution CLI to a specific version, run `npm install -g @xilution/xilution-cli@{version}`.
   For example, run `npm install -g @xilution/xilution-cli@1.3.0` to install to version 1.3.0.
@@ -34,7 +34,7 @@
 
 ## Upgrade
 
-- To upgrade the Xilution CLI to the latest version, run `npm update -g @xilution/xilution-cli`.
+- To upgrade the Xilution CLI to the latest version, run `npm update -g @xilution/xilution-cli@latest`.
 
 The Xilution CLI changes frequently as we add more and more products to [our portfolio of APIs](https://products.xilution.com).
 If your version of the CLI does not include something you expect, try upgrading.
@@ -43,7 +43,7 @@ See [our releases](https://github.com/xilution/xilution-cli/releases) for the la
 
 ## Uninstall
 
-- To uninstall the Xilution CLI, run `yarn global remove @xilution/xilution-cli`.
+- To uninstall the Xilution CLI, run `npm install -g @xilution/xilution-cli`.
 
 ---
 
