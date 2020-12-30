@@ -12,7 +12,7 @@ const buildProductCategoryPositionalOptions = (): PositionalOptions => {
 };
 
 const buildProductNamePositionalOptions = (
-  command: string[]
+  command: (string | number)[]
 ): PositionalOptions => {
   const baseOptions = {
     description: "A Xilution product name.",
@@ -32,7 +32,7 @@ const buildProductNamePositionalOptions = (
 };
 
 const buildOperationPositionalOptions = (
-  command: string[]
+  command: (string | number)[]
 ): PositionalOptions => {
   const baseOptions = {
     description: "A product operation.",
@@ -51,7 +51,7 @@ const buildOperationPositionalOptions = (
   return baseOptions;
 };
 
-const buildOptions = (command: string[]): { [key: string]: Options } => {
+const buildOptions = (command: (string | number)[]): { [key: string]: Options } => {
   const [, productCategory, productName, operation] = command;
   const path = `productCategories.${productCategory}.productNames.${productName}.operations.${operation}.options`;
   const options = get(products, path);
