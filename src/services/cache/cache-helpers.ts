@@ -88,10 +88,16 @@ export const getAuthenticationFromXilution = async (
   profile: string
 ): Promise<IAuthentication> => {
   const context: IContext = await getContext(profile);
-  const { env, organizationId, clientId, clientSecret, username, password } = context;
+  const {
+    env,
+    organizationId,
+    clientId,
+    clientSecret,
+    username,
+    password,
+  } = context;
   let authentication;
-  if (env && organizationId
-    && clientId && clientSecret) {
+  if (env && organizationId && clientId && clientSecret) {
     authentication = await getTokenWithClientCredentials(
       env,
       organizationId,

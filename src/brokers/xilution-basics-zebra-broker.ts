@@ -3,7 +3,10 @@ import { v4 } from "uuid";
 
 const SCOPE = "read write";
 
-export const buildOAuthImpersonationTokenUrl = (env: string, organizationId: string) =>
+export const buildOAuthImpersonationTokenUrl = (
+  env: string,
+  organizationId: string
+) =>
   `https://${env}.zebra.basics.api.xilution.com/organizations/${organizationId}/oauth/impersonation/token`;
 
 export const buildOAuthTokenUrl = (env: string, organizationId: string) =>
