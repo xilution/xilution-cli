@@ -66,7 +66,7 @@
   },
   "release": {
     "branches": [
-      "main"
+      "master"
     ]
   },
   "author": "Todd Brunia <tbrunia@gmail.com> (http://www.github.com/tbrunia)",
