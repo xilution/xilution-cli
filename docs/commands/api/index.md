@@ -5,7 +5,7 @@
 ## Synopsis
 
 ```
-xln-cli api <product_category> <product_name> <operation> [options]
+xln-cli api <product-category> <product-name> <operation> [options]
 ```
 
 ## Product Categories
@@ -13,7 +13,7 @@ xln-cli api <product_category> <product_name> <operation> [options]
 - [basics](basics/index.md)
 - [core](core/index.md)
 - [integration](integration/index.md)
-- [content_delivery](content_delivery/index.md)
+- [content-delivery](content-delivery/index.md)
 
 ---
 

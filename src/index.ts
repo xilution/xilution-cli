@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
-import { IContext } from "./@types";
+import { IContext } from "./types";
 import apiCommand from "./services/api/command";
 import { doCallApi } from "./services/api/operations";
 import configCommand from "./services/config/command";

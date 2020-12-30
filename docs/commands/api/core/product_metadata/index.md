@@ -10,7 +10,7 @@ xln-cli api core product-metadata <operation> [options]
 
 ## Operations
 
-- [list_all_products](list_all_products.md)
+- [list-all-products](list-all-products.md)
 
 ---
 

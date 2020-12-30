@@ -1,6 +1,6 @@
 import { exists, readFile } from "fs";
 import { promisify } from "util";
-import { IConfiguration, IContext } from "../../@types";
+import { IConfiguration, IContext } from "../../types";
 import {
   getPathToConfig,
   getPathToXilutionDirectory,

@@ -5,7 +5,7 @@
 ## Synopsis
 
 ```
-xln-cli api integration <product_name> <operation> [options]
+xln-cli api integration <product-name> <operation> [options]
 ```
 
 ## Product Names

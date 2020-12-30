@@ -1,14 +1,16 @@
 import { AxiosResponse } from "axios";
-import { IAuthentication } from "../@types";
-import { oauthToken } from "../brokers/xilution-core-authentication-broker";
+import { IAuthentication } from "../types";
+import { oauthToken } from "../brokers/xilution-basics-zebra-broker";
 
 export const getTokenWithClientCredentials = async (
   env: string,
+  organizationId: string,
   clientId: string,
   clientSecret: string
 ): Promise<IAuthentication> => {
   const fetchTokensResponse: AxiosResponse = await oauthToken(
     env,
+    organizationId,
     "client_credentials",
     clientId,
     clientSecret
@@ -23,12 +25,14 @@ export const getTokenWithClientCredentials = async (
 
 export const getTokenWithPassword = async (
   env: string,
+  organizationId: string,
   clientId: string,
   username: string,
   password: string
 ): Promise<IAuthentication> => {
   const fetchTokensResponse: AxiosResponse = await oauthToken(
     env,
+    organizationId,
     "password",
     clientId,
     username,

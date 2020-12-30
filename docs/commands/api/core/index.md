@@ -5,13 +5,13 @@
 ## Synopsis
 
 ```
-xln-cli api core <product_name> <operation> [options]
+xln-cli api core <product-name> <operation> [options]
 ```
 
 ## Product Names
 
 - [authentication](authentication/index.md)
-- [product_metadata](product_metadata/index.md)
+- [product-metadata](product-metadata/index.md)
 
 ---
 

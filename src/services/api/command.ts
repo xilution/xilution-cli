@@ -51,7 +51,9 @@ const buildOperationPositionalOptions = (
   return baseOptions;
 };
 
-const buildOptions = (command: (string | number)[]): { [key: string]: Options } => {
+const buildOptions = (
+  command: (string | number)[]
+): { [key: string]: Options } => {
   const [, productCategory, productName, operation] = command;
   const path = `productCategories.${productCategory}.productNames.${productName}.operations.${operation}.options`;
   const options = get(products, path);
@@ -69,14 +71,14 @@ export default {
 
     return argv1
       .usage(
-        "Usage: $0 api <product_category> <product_name> <operation> [options]"
+        "Usage: $0 api <product-category> <product-name> <operation> [options]"
       )
-      .positional("product_category", buildProductCategoryPositionalOptions())
-      .positional("product_name", buildProductNamePositionalOptions(command))
+      .positional("product-category", buildProductCategoryPositionalOptions())
+      .positional("product-name", buildProductNamePositionalOptions(command))
       .positional("operation", buildOperationPositionalOptions(command))
       .options(buildOptions(command))
       .help();
   },
-  command: "api <product_category> <product_name> <operation> [options]",
+  command: "api <product-category> <product-name> <operation> [options]",
   describe: "API command",
 } as CommandModule;

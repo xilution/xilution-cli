@@ -1,11 +1,11 @@
 [<- api](../index.md)
 
-# api content_delivery
+# api content-delivery
 
 ## Synopsis
 
 ```
-xln-cli api content_delivery <product_name> <operation> [options]
+xln-cli api content-delivery <product-name> <operation> [options]
 ```
 
 ## Product Names

@@ -1,4 +1,4 @@
-import { IAuthentication } from "../../@types";
+import { IAuthentication } from "../../types";
 import {
   getAuthenticationFromCache,
   getAuthenticationFromXilution,

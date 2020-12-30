@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs";
 import { promisify } from "util";
 import { Arguments } from "yargs";
-import { IContext } from "../../../../../@types";
+import { IContext } from "../../../../../types";
 import {
   createPipeline,
   deletePipeline,
@@ -18,15 +18,15 @@ import { getContext } from "../../../../config/config-service";
 
 export default {
   operations: {
-    create_pipeline: {
+    ["create-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const inputFile = args.input_file as string;
+        const organizationId = args["organization-id"] as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const pipeline = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -50,7 +50,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -66,24 +66,28 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
+        },
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
         },
       },
     },
-    delete_pipeline: {
+    ["delete-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
 
         const response = await deletePipeline(
           env,
@@ -101,21 +105,25 @@ export default {
         };
       },
       options: {
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },
       },
     },
-    deprovision_pipeline: {
+    ["deprovision-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
 
         const response = await deprovisionPipeline(
           env,
@@ -131,21 +139,25 @@ export default {
         return response.data;
       },
       options: {
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },
       },
     },
-    get_pipeline: {
+    ["get-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
 
         const response = await getPipeline(
           env,
@@ -158,7 +170,7 @@ export default {
           throw new Error(response.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -174,25 +186,29 @@ export default {
         return response.data;
       },
       options: {
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },
       },
     },
-    list_pipelines: {
+    ["list-pipelines"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pageNumber = args.page_number as number;
-        const pageSize = args.page_size as number;
+        const organizationId = args["organization-id"] as string;
+        const pageNumber = args["page-number"] as number;
+        const pageSize = args["page-size"] as number;
 
         const response = await listPipelines(
           env,
@@ -206,7 +222,7 @@ export default {
           throw new Error(response.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -222,30 +238,34 @@ export default {
         return response.data;
       },
       options: {
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
-        page_number: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["page-number"]: {
           description: "The page number",
           required: true,
           type: "number",
         },
-        page_size: {
+        ["page-size"]: {
           description: "The page size",
           required: true,
           type: "number",
         },
       },
     },
-    provision_pipeline: {
+    ["provision-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
 
         const response = await provisionPipeline(
           env,
@@ -261,21 +281,25 @@ export default {
         return response.data;
       },
       options: {
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },
       },
     },
-    reprovision_pipeline: {
+    ["reprovision-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
 
         const response = await reprovisionPipeline(
           env,
@@ -291,22 +315,26 @@ export default {
         return response.data;
       },
       options: {
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },
       },
     },
-    update_pipeline: {
+    ["update-pipeline"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
         const { env } = context;
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
-        const organizationId = args.organization_id as string;
-        const pipelineId = args.pipeline_id as string;
-        const inputFile = args.input_file as string;
+        const organizationId = args["organization-id"] as string;
+        const pipelineId = args["pipeline-id"] as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const pipeline = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -333,7 +361,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -349,14 +377,18 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
-        pipeline_id: {
+        ["organization-id"]: {
+          demandOption: true,
+          description: "A Xilution Organization ID",
+        },
+        ["pipeline-id"]: {
           demandOption: true,
           description: "A Fox pipeline ID",
         },

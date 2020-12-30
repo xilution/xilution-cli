@@ -3,8 +3,8 @@ import { Arguments } from "yargs";
 import products from "./products";
 
 export const doCallApi = async (args: Arguments): Promise<any> => {
-  const productCategory = args.product_category as string;
-  const productName = args.product_name as string;
+  const productCategory = args["product-category"] as string;
+  const productName = args["product-name"] as string;
   const operation = args.operation as string;
 
   const path = `productCategories.${productCategory}.productNames.${productName}.operations.${operation}.operation`;
@@ -16,6 +16,6 @@ export const doCallApi = async (args: Arguments): Promise<any> => {
 
   // tslint:disable-next-line:max-line-length
   throw new Error(
-    `Implementation for product_category: ${productCategory}, product_name: ${productName} and operation: ${operation} has not been completed yet.`
+    `Implementation for product-category: ${productCategory}, product-name: ${productName} and operation: ${operation} has not been completed yet.`
   );
 };

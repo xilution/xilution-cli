@@ -10,8 +10,8 @@ xln-cli api core authentication <operation> [options]
 
 ## Operations
 
-- [oauth_impersonation_token](oauth_impersonation_token.md)
-- [oauth_token](oauth_token.md)
+- [oauth-impersonation-token](oauth-impersonation-token.md)
+- [oauth-token](oauth-token.md)
 
 ---
 

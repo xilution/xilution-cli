@@ -10,14 +10,14 @@ xln-cli api integration fox <operation> [options]
 
 ## Operations
 
-- [create_pipeline](create_pipeline.md)
-- [delete_pipeline](delete_pipeline.md)
-- [deprovision_pipeline](deprovision_pipeline.md)
-- [get_pipeline](get_pipeline.md)
-- [list_pipelines](list_pipelines.md)
-- [provision_pipeline](provision_pipeline.md)
-- [reprovision_pipeline](reprovision_pipeline.md)
-- [update_pipeline](update_pipeline.md)
+- [create-pipeline](create-pipeline.md)
+- [delete-pipeline](delete-pipeline.md)
+- [deprovision-pipeline](deprovision-pipeline.md)
+- [get-pipeline](get-pipeline.md)
+- [list-pipelines](list-pipelines.md)
+- [provision-pipeline](provision-pipeline.md)
+- [reprovision-pipeline](reprovision-pipeline.md)
+- [update-pipeline](update-pipeline.md)
 
 ---
 

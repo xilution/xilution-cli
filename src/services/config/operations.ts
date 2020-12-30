@@ -1,5 +1,5 @@
 import { Arguments } from "yargs";
-import { IContext } from "../../@types";
+import { IContext } from "../../types";
 import { getContext } from "./config-service";
 
 export const doGetContext = async (args: Arguments): Promise<IContext> => {

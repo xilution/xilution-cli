@@ -19,6 +19,7 @@
   "homepage": "https://github.com/xilution/xilution-cli",
   "scripts": {
     "build": "npx tsc",
+    "clean": "rm -rf built coverage",
     "start": "npx ts-node ./src/index.ts",
     "format": "npx prettier --write .",
     "lint": "npx prettier --check .",

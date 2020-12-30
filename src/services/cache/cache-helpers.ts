@@ -1,7 +1,7 @@
 import { isAfter } from "date-fns";
 import { exists, mkdir, readFile, writeFile } from "fs";
 import { promisify } from "util";
-import { IAuthentication, ICache, IContext } from "../../@types";
+import { IAuthentication, ICache, IContext } from "../../types";
 import {
   getTokenWithClientCredentials,
   getTokenWithPassword,
@@ -88,17 +88,20 @@ export const getAuthenticationFromXilution = async (
   profile: string
 ): Promise<IAuthentication> => {
   const context: IContext = await getContext(profile);
-  const { env, clientId, clientSecret, username, password } = context;
+  const { env, organizationId, clientId, clientSecret, username, password } = context;
   let authentication;
-  if (env && clientId && clientSecret) {
+  if (env && organizationId
+    && clientId && clientSecret) {
     authentication = await getTokenWithClientCredentials(
       env,
+      organizationId,
       clientId,
       clientSecret
     );
-  } else if (env && clientId && username && password) {
+  } else if (env && organizationId && clientId && username && password) {
     authentication = await getTokenWithPassword(
       env,
+      organizationId,
       clientId,
       username,
       password

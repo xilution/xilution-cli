@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs";
 import { promisify } from "util";
 import { Arguments } from "yargs";
-import { IContext } from "../../../../../@types";
+import { IContext } from "../../../../../types";
 import {
   createThing,
   deleteThing,
@@ -18,7 +18,7 @@ import { getContext } from "../../../../config/config-service";
 
 export default {
   operations: {
-    create_thing: {
+    ["create-thing"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -26,7 +26,7 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const type = args.type as string;
-        const inputFile = args.input_file as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const thing = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -50,7 +50,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -66,11 +66,11 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
         type: {
@@ -79,7 +79,7 @@ export default {
         },
       },
     },
-    create_type: {
+    ["create-type"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -87,7 +87,7 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const name = args.name as string;
-        const inputFile = args.input_file as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const type = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -103,7 +103,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -119,7 +119,7 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
@@ -127,12 +127,12 @@ export default {
           demandOption: true,
           description: "The type's name",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
       },
     },
-    delete_thing: {
+    ["delete-thing"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -140,7 +140,7 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const type = args.type as string;
-        const thingId = args.thing_id as string;
+        const thingId = args["thing-id"] as string;
 
         const response = await deleteThing(env, access_token, type, thingId);
 
@@ -153,7 +153,7 @@ export default {
         };
       },
       options: {
-        thing_id: {
+        ["thing-id"]: {
           demandOption: true,
           description: "A thing ID",
         },
@@ -163,7 +163,7 @@ export default {
         },
       },
     },
-    delete_type: {
+    ["delete-type"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -189,7 +189,7 @@ export default {
         },
       },
     },
-    get_thing: {
+    ["get-thing"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -197,7 +197,7 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const type = args.type as string;
-        const thingId = args.thing_id as string;
+        const thingId = args["thing-id"] as string;
 
         const response = await getThing(env, access_token, type, thingId);
 
@@ -205,7 +205,7 @@ export default {
           throw new Error(response.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -221,10 +221,10 @@ export default {
         return response.data;
       },
       options: {
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
-        thing_id: {
+        ["thing-id"]: {
           demandOption: true,
           description: "A thing ID",
         },
@@ -234,7 +234,7 @@ export default {
         },
       },
     },
-    get_type: {
+    ["get-type"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -249,7 +249,7 @@ export default {
           throw new Error(response.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -269,12 +269,12 @@ export default {
           demandOption: true,
           description: "The type's name",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
       },
     },
-    list_things: {
+    ["list-things"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -282,8 +282,8 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const type = args.type as string;
-        const pageNumber = args.page_number as number;
-        const pageSize = args.page_size as number;
+        const pageNumber = args["page-number"] as number;
+        const pageSize = args["page-size"] as number;
 
         const response = await listThings(
           env,
@@ -300,12 +300,12 @@ export default {
         return response.data;
       },
       options: {
-        page_number: {
+        ["page-number"]: {
           description: "The page number",
           required: true,
           type: "number",
         },
-        page_size: {
+        ["page-size"]: {
           description: "The page size",
           required: true,
           type: "number",
@@ -316,7 +316,7 @@ export default {
         },
       },
     },
-    update_thing: {
+    ["update-thing"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -324,8 +324,8 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const type = args.type as string;
-        const thingId = args.thing_id as string;
-        const inputFile = args.input_file as string;
+        const thingId = args["thing-id"] as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const thing = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -347,7 +347,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -363,14 +363,14 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
-        thing_id: {
+        ["thing-id"]: {
           demandOption: true,
           description: "A thing ID",
         },
@@ -380,7 +380,7 @@ export default {
         },
       },
     },
-    update_type: {
+    ["update-type"]: {
       operation: async (args: Arguments) => {
         const profile = args.profile as string;
         const context: IContext = await getContext(profile);
@@ -388,7 +388,7 @@ export default {
         const authentication = await getAuthentication(profile);
         const { access_token } = authentication;
         const name = args.name as string;
-        const inputFile = args.input_file as string;
+        const inputFile = args["input-file"] as string;
         const buffer: Buffer = await promisify(readFile)(inputFile);
         const type = JSON.parse(Buffer.from(buffer).toString("ascii"));
 
@@ -404,7 +404,7 @@ export default {
           throw new Error(getResponse.data.message);
         }
 
-        const outputFile = args.output_file as string;
+        const outputFile = args["output-file"] as string;
 
         if (outputFile) {
           await promisify(writeFile)(
@@ -420,7 +420,7 @@ export default {
         return getResponse.data;
       },
       options: {
-        input_file: {
+        ["input-file"]: {
           demandOption: true,
           description: "Path to input file",
         },
@@ -428,7 +428,7 @@ export default {
           demandOption: true,
           description: "The type's name",
         },
-        output_file: {
+        ["output-file"]: {
           description: "Path to output file",
         },
       },
