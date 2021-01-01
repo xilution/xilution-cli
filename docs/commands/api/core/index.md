@@ -2,6 +2,14 @@
 
 # api core
 
+## Description
+
+Invoke Xilution Core APIs from the command line with this command.
+See [Xilution Core API Product Catalog](https://prod.docs.xilution.com/api/catalog/core) for a comprehensive list of Xilution Core API products.
+
+We're actively working on building out our CLI.
+If you need an API for a Xilution Core product not listed below contact <support@xilution.com>, and we'll escalate its build priority.
+
 ## Synopsis
 
 ```

@@ -2,6 +2,14 @@
 
 # api
 
+## Description
+
+Invoke Xilution APIs from the command line with this command.
+See [Xilution API Product Catalog](https://prod.docs.xilution.com/api/catalog) for a comprehensive list of Xilution API products.
+
+We're actively working on building out our CLI.
+If you need an API for a Xilution product category not listed below contact <support@xilution.com>, and we'll escalate its build priority.
+
 ## Synopsis
 
 ```
