@@ -4,12 +4,12 @@
 
 ## Description
 
-Generates a authentication token.
+Generates an authentication token.
 
 ## Synopsis
 
 ```
-xln-cli api core authentication oauth-token [options]
+xln-cli api basics zebra oauth-token [options]
 ```
 
 ## Options

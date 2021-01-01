@@ -1,11 +1,11 @@
-[<- api . core](../index.md)
+[<- api . basics](../index.md)
 
-# api core authentication
+# api basics zebra
 
 ## Synopsis
 
 ```
-xln-cli api core authentication <operation> [options]
+xln-cli api basics zebra <operation> [options]
 ```
 
 ## Operations

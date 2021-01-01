@@ -4,12 +4,12 @@
 
 ## Description
 
-Generates a authentication impersonation token.
+Generates an authentication impersonation token.
 
 ## Synopsis
 
 ```
-xln-cli api core authentication oauth-impersonation-token [options]
+xln-cli api basics zebra oauth-impersonation-token [options]
 ```
 
 ## Options

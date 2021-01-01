@@ -11,6 +11,7 @@ xln-cli api basics <product-name> <operation> [options]
 ## Product Names
 
 - [beagily](beagily/index.md)
+- [zebra](zebra/index.md)
 
 ---
 

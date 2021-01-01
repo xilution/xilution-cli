@@ -10,7 +10,6 @@ xln-cli api core <product-name> <operation> [options]
 
 ## Product Names
 
-- [authentication](authentication/index.md)
 - [product-metadata](product-metadata/index.md)
 
 ---
