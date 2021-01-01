@@ -15,5 +15,5 @@ xln-cli api basics zebra <operation> [options]
 
 ---
 
-Copyright 2019-2020 Teapot, LLC.  
+Copyright 2019-2021 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.

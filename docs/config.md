@@ -40,5 +40,5 @@ If the `clientSecret` is not present, the Xilution CLI will try to use `clientId
 
 ---
 
-Copyright 2019-2020 Teapot, LLC.  
+Copyright 2019-2021 Teapot, LLC.  
 Xilution is a DBA of Teapot, LLC.
