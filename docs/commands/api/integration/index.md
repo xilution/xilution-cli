@@ -5,7 +5,7 @@
 ## Description
 
 Invoke Xilution Integration APIs from the command line with this command.
-See [Xilution Integration API Product Catalog](https://prod.docs.xilution.com/api/catalog/integration) for a comprehensive list of Xilution Integration API products.
+See [Xilution Integration API Product Catalog](https://docs.xilution.com/api/catalog/integration) for a comprehensive list of Xilution Integration API products.
 
 We're actively working on building out our CLI.
 If you need an API for a Xilution Integration product not listed below contact <support@xilution.com>, and we'll escalate its build priority.

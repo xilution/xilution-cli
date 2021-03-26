@@ -5,7 +5,7 @@
 ## Description
 
 Invoke Xilution Content Delivery APIs from the command line with this command.
-See [Xilution Content Delivery API Product Catalog](https://prod.docs.xilution.com/api/catalog/content-delivery) for a comprehensive list of Xilution Content Delivery API products.
+See [Xilution Content Delivery API Product Catalog](https://docs.xilution.com/api/catalog/content-delivery) for a comprehensive list of Xilution Content Delivery API products.
 
 We're actively working on building out our CLI.
 If you need an API for a Xilution Content Delivery product not listed below contact <support@xilution.com>, and we'll escalate its build priority.

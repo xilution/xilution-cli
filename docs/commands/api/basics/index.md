@@ -5,7 +5,7 @@
 ## Description
 
 Invoke Xilution Basics APIs from the command line with this command.
-See [Xilution Basics API Product Catalog](https://prod.docs.xilution.com/api/catalog/basics) for a comprehensive list of Xilution Basics API products.
+See [Xilution Basics API Product Catalog](https://docs.xilution.com/api/catalog/basics) for a comprehensive list of Xilution Basics API products.
 
 We're actively working on building out our CLI.
 If you need an API for a Xilution Basics product not listed below contact <support@xilution.com>, and we'll escalate its build priority.
